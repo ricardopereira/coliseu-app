@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6246" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilesViewController" customModule="Coliseu" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="BPf-MA-Tay" id="cFO-WY-Y53"/>
+                <outlet property="view" destination="iN0-l3-epB" id="HJl-Pg-5aV"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BPf-MA-Tay">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="dLe-yv-YXd"/>
+                        <outlet property="delegate" destination="-1" id="DwH-Ya-Wxa"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="BPf-MA-Tay" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="3yo-mA-7fl"/>
+                <constraint firstAttribute="trailing" secondItem="BPf-MA-Tay" secondAttribute="trailing" id="A3E-hD-62D"/>
+                <constraint firstAttribute="bottom" secondItem="BPf-MA-Tay" secondAttribute="bottom" id="Hd4-e5-Udl"/>
+                <constraint firstItem="BPf-MA-Tay" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cKl-3X-hi1"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D75985C419D0F7A500F68BDF /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75985C319D0F7A500F68BDF /* AppData.swift */; };
+		D77213B919D03F78006FCD62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77213B819D03F78006FCD62 /* AppDelegate.swift */; };
+		D77213BB19D03F78006FCD62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77213BA19D03F78006FCD62 /* MainViewController.swift */; };
+		D77213BE19D03F78006FCD62 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D77213BC19D03F78006FCD62 /* Launch.storyboard */; };
+		D77213C019D03F78006FCD62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D77213BF19D03F78006FCD62 /* Images.xcassets */; };
+		D77213CF19D03F79006FCD62 /* ColiseuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77213CE19D03F79006FCD62 /* ColiseuTests.swift */; };
+		D77213E319D07932006FCD62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77213E019D078BA006FCD62 /* Alamofire.framework */; };
+		D77213E519D07995006FCD62 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D77213E019D078BA006FCD62 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D77213EF19D0BCBF006FCD62 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77213EE19D0BCBF006FCD62 /* MainView.xib */; };
+		D787FF3719D112A800EFFF78 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D787FF3619D112A800EFFF78 /* AudioPlayer.swift */; };
+		D787FF4619D1892000EFFF78 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D787FF4519D1892000EFFF78 /* FilesViewController.swift */; };
+		D787FF5119D1C6CD00EFFF78 /* FilesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D787FF5019D1C6CD00EFFF78 /* FilesView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D77213C919D03F79006FCD62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D77213AB19D03F78006FCD62 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D77213B219D03F78006FCD62;
+			remoteInfo = Coliseu;
+		};
+		D77213DF19D078BA006FCD62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D77213DA19D078B9006FCD62 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		D77213E119D078BA006FCD62 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D77213DA19D078B9006FCD62 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D77213E419D0795F006FCD62 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D77213E519D07995006FCD62 /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D75985C319D0F7A500F68BDF /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		D77213B319D03F78006FCD62 /* Coliseu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coliseu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D77213B719D03F78006FCD62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D77213B819D03F78006FCD62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D77213BA19D03F78006FCD62 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		D77213BD19D03F78006FCD62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Launch.storyboard; sourceTree = "<group>"; };
+		D77213BF19D03F78006FCD62 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D77213C819D03F79006FCD62 /* ColiseuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColiseuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D77213CD19D03F79006FCD62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D77213CE19D03F79006FCD62 /* ColiseuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColiseuTests.swift; sourceTree = "<group>"; };
+		D77213DA19D078B9006FCD62 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		D77213EE19D0BCBF006FCD62 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		D787FF3619D112A800EFFF78 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		D787FF4519D1892000EFFF78 /* FilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
+		D787FF5019D1C6CD00EFFF78 /* FilesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilesView.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D77213B019D03F78006FCD62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D77213E319D07932006FCD62 /* Alamofire.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77213C519D03F79006FCD62 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D77213AA19D03F78006FCD62 = {
+			isa = PBXGroup;
+			children = (
+				D77213B519D03F78006FCD62 /* Coliseu */,
+				D77213CB19D03F79006FCD62 /* ColiseuTests */,
+				D77213B419D03F78006FCD62 /* Products */,
+				D77213DA19D078B9006FCD62 /* Alamofire.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		D77213B419D03F78006FCD62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D77213B319D03F78006FCD62 /* Coliseu.app */,
+				D77213C819D03F79006FCD62 /* ColiseuTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D77213B519D03F78006FCD62 /* Coliseu */ = {
+			isa = PBXGroup;
+			children = (
+				D77213B819D03F78006FCD62 /* AppDelegate.swift */,
+				D75985C319D0F7A500F68BDF /* AppData.swift */,
+				D787FF3619D112A800EFFF78 /* AudioPlayer.swift */,
+				D77213EE19D0BCBF006FCD62 /* MainView.xib */,
+				D77213BA19D03F78006FCD62 /* MainViewController.swift */,
+				D787FF5019D1C6CD00EFFF78 /* FilesView.xib */,
+				D787FF4519D1892000EFFF78 /* FilesViewController.swift */,
+				D77213BC19D03F78006FCD62 /* Launch.storyboard */,
+				D77213BF19D03F78006FCD62 /* Images.xcassets */,
+				D77213B619D03F78006FCD62 /* Supporting Files */,
+			);
+			path = Coliseu;
+			sourceTree = "<group>";
+		};
+		D77213B619D03F78006FCD62 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D77213B719D03F78006FCD62 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D77213CB19D03F79006FCD62 /* ColiseuTests */ = {
+			isa = PBXGroup;
+			children = (
+				D77213CE19D03F79006FCD62 /* ColiseuTests.swift */,
+				D77213CC19D03F79006FCD62 /* Supporting Files */,
+			);
+			path = ColiseuTests;
+			sourceTree = "<group>";
+		};
+		D77213CC19D03F79006FCD62 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D77213CD19D03F79006FCD62 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D77213DB19D078B9006FCD62 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D77213E019D078BA006FCD62 /* Alamofire.framework */,
+				D77213E219D078BA006FCD62 /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D77213B219D03F78006FCD62 /* Coliseu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D77213D219D03F79006FCD62 /* Build configuration list for PBXNativeTarget "Coliseu" */;
+			buildPhases = (
+				D77213AF19D03F78006FCD62 /* Sources */,
+				D77213B019D03F78006FCD62 /* Frameworks */,
+				D77213B119D03F78006FCD62 /* Resources */,
+				D77213E419D0795F006FCD62 /* Copy Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Coliseu;
+			productName = Coliseu;
+			productReference = D77213B319D03F78006FCD62 /* Coliseu.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D77213C719D03F79006FCD62 /* ColiseuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D77213D519D03F79006FCD62 /* Build configuration list for PBXNativeTarget "ColiseuTests" */;
+			buildPhases = (
+				D77213C419D03F79006FCD62 /* Sources */,
+				D77213C519D03F79006FCD62 /* Frameworks */,
+				D77213C619D03F79006FCD62 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D77213CA19D03F79006FCD62 /* PBXTargetDependency */,
+			);
+			name = ColiseuTests;
+			productName = ColiseuTests;
+			productReference = D77213C819D03F79006FCD62 /* ColiseuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D77213AB19D03F78006FCD62 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Ricardo Pereira";
+				TargetAttributes = {
+					D77213B219D03F78006FCD62 = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = JC9BAC9Y39;
+					};
+					D77213C719D03F79006FCD62 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = D77213B219D03F78006FCD62;
+					};
+				};
+			};
+			buildConfigurationList = D77213AE19D03F78006FCD62 /* Build configuration list for PBXProject "Coliseu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D77213AA19D03F78006FCD62;
+			productRefGroup = D77213B419D03F78006FCD62 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D77213DB19D078B9006FCD62 /* Products */;
+					ProjectRef = D77213DA19D078B9006FCD62 /* Alamofire.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				D77213B219D03F78006FCD62 /* Coliseu */,
+				D77213C719D03F79006FCD62 /* ColiseuTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D77213E019D078BA006FCD62 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = D77213DF19D078BA006FCD62 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D77213E219D078BA006FCD62 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = D77213E119D078BA006FCD62 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D77213B119D03F78006FCD62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D787FF5119D1C6CD00EFFF78 /* FilesView.xib in Resources */,
+				D77213EF19D0BCBF006FCD62 /* MainView.xib in Resources */,
+				D77213BE19D03F78006FCD62 /* Launch.storyboard in Resources */,
+				D77213C019D03F78006FCD62 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77213C619D03F79006FCD62 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D77213AF19D03F78006FCD62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D77213BB19D03F78006FCD62 /* MainViewController.swift in Sources */,
+				D787FF4619D1892000EFFF78 /* FilesViewController.swift in Sources */,
+				D77213B919D03F78006FCD62 /* AppDelegate.swift in Sources */,
+				D75985C419D0F7A500F68BDF /* AppData.swift in Sources */,
+				D787FF3719D112A800EFFF78 /* AudioPlayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D77213C419D03F79006FCD62 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D77213CF19D03F79006FCD62 /* ColiseuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D77213CA19D03F79006FCD62 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D77213B219D03F78006FCD62 /* Coliseu */;
+			targetProxy = D77213C919D03F79006FCD62 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D77213BC19D03F78006FCD62 /* Launch.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D77213BD19D03F78006FCD62 /* Base */,
+			);
+			name = Launch.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D77213D019D03F79006FCD62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D77213D119D03F79006FCD62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D77213D319D03F79006FCD62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Coliseu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		D77213D419D03F79006FCD62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Coliseu/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+		D77213D619D03F79006FCD62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ColiseuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coliseu.app/Coliseu";
+			};
+			name = Debug;
+		};
+		D77213D719D03F79006FCD62 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ColiseuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Coliseu.app/Coliseu";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D77213AE19D03F78006FCD62 /* Build configuration list for PBXProject "Coliseu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77213D019D03F79006FCD62 /* Debug */,
+				D77213D119D03F79006FCD62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D77213D219D03F79006FCD62 /* Build configuration list for PBXNativeTarget "Coliseu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77213D319D03F79006FCD62 /* Debug */,
+				D77213D419D03F79006FCD62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D77213D519D03F79006FCD62 /* Build configuration list for PBXNativeTarget "ColiseuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D77213D619D03F79006FCD62 /* Debug */,
+				D77213D719D03F79006FCD62 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D77213AB19D03F78006FCD62 /* Project object */;
+}
