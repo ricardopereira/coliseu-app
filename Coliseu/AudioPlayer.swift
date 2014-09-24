@@ -9,20 +9,34 @@
 import Foundation
 import AVFoundation
 
-class AudioPlayer {
+protocol AudioPlayerProtocol: AVAudioPlayerDelegate
+{
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool)
+}
 
-    //audioPlayerDidFinishPlaying: Delegate AVAudioPlayerDelegate
+class AudioPlayer: NSObject
+{
+    typealias function = () -> ()
 
     var audioPlayer = AVAudioPlayer()
-    var currentAudio = "";
-    var currentAudioPath: NSURL!
-    var currentAudioIndex = 0
-    var audioList: [NSURL] = []
     var timer: NSTimer!
+
+    // Playlist
+    var currentAudio = "";
+    var currentAudioIndex = 0
+    var currentAudioPath: NSURL?
     var audioLength = 0.0
+    var audioList: [NSURL] = []
 
-    init() {
+    // Events
+    var playerDidStart: function?
+    var playerDidStop: function?
 
+    override init() {
+        // Inherited
+        super.init()
+        // Audio Player
+        //audioPlayer.delegate = self
     }
 
     func prepareAudio(file: NSURL) {
@@ -50,13 +64,22 @@ class AudioPlayer {
     }
 
     func  playAudio() {
+        if let event = playerDidStart {
+            event()
+        }
         audioPlayer.play()
         //startTimer()
         saveCurrentTrackNumber()
     }
 
     func stopAudio() {
+        if let event = playerDidStop {
+            event()
+        }
         audioPlayer.stop();
+        if let current = currentAudioPath {
+            prepareAudio(current)
+        }
     }
 
     func playNextAudio() {
@@ -93,4 +116,13 @@ class AudioPlayer {
         audioPlayer.pause()
     }
 
+}
+
+// MARK: AudioPlayerProtocol
+
+extension AudioPlayer: AudioPlayerProtocol
+{
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+
+    }
 }

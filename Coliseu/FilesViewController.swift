@@ -17,23 +17,36 @@ protocol TableViewProtocol: UITableViewDelegate, UITableViewDataSource
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
 }
 
-class FilesViewController: UIViewController {
+class FilesViewController: UIViewController
+{
+    private let cellIdentifier = "Cell"
 
     var files: [NSURL]?
 
     @IBOutlet weak var tableView: UITableView!
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        // Register cell
+        let cellNib = UINib(nibName: "FilesViewCell", bundle: nil)
+        tableView.registerNib(cellNib!, forCellReuseIdentifier: cellIdentifier)
+        // Without Nib
+        //tableView.registerClass(FilesViewCell.self, forCellReuseIdentifier: cellIdentifier)
 
         // Set delegate and datasource
         tableView.delegate = self
         tableView.dataSource = self
+
+        // Configure
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
-    override func viewWillAppear(animated: Bool) {
+
+    override func viewWillAppear(animated: Bool)
+    {
         super.viewWillAppear(animated)
         // Navigation bar
         if let navigation = navigationController {
@@ -41,14 +54,29 @@ class FilesViewController: UIViewController {
         }
     }
 
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
         // Navigation bar
         if let navigation = navigationController {
-            navigation.navigationBarHidden = true
+            navigation.hidesBarsOnSwipe = true
         }
     }
 
+    override func viewWillDisappear(animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        // Navigation bar
+        if let navigation = navigationController {
+            navigation.hidesBarsOnSwipe = false
+        }
+    }
+
+    override func viewDidDisappear(animated: Bool)
+    {
+        super.viewDidDisappear(animated)
+        // At this instance theres no Navigation bar!
+    }
 }
 
 // MARK: - TableViewProtocol
@@ -57,12 +85,10 @@ extension FilesViewController: TableViewProtocol
 {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if let filesList = files
-        {
+        if let filesList = files {
             return filesList.count
         }
-        else
-        {
+        else {
             return 0
         }
     }
@@ -71,13 +97,9 @@ extension FilesViewController: TableViewProtocol
     {
         var cellRow = UITableViewCell()
 
-        if let filesList = files
-        {
-            if let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell? {
-                if let label = cell.textLabel {
-                    label.text = filesList[indexPath.row].absoluteString!
-                    cellRow = cell
-                }
+        if let filesList = files{
+            if let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as FilesViewCell? {
+                cellRow = cell.configure("MP3 - " + indexPath.item.description, filesList[indexPath.row].absoluteString!)
             }
         }
         return cellRow
@@ -85,6 +107,10 @@ extension FilesViewController: TableViewProtocol
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+
+    //func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+
+    //func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
 }

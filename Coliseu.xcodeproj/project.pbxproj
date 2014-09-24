@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D741097219D2D59B00781E10 /* FilesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741097119D2D59B00781E10 /* FilesViewCell.swift */; };
+		D741097819D3003800781E10 /* FilesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D741097A19D3003800781E10 /* FilesViewCell.xib */; };
+		D741098519D301EB00781E10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D741098719D301EB00781E10 /* Localizable.strings */; };
 		D75985C419D0F7A500F68BDF /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75985C319D0F7A500F68BDF /* AppData.swift */; };
 		D77213B919D03F78006FCD62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77213B819D03F78006FCD62 /* AppDelegate.swift */; };
 		D77213BB19D03F78006FCD62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77213BA19D03F78006FCD62 /* MainViewController.swift */; };
@@ -60,6 +63,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D741097119D2D59B00781E10 /* FilesViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewCell.swift; sourceTree = "<group>"; };
+		D741097719D2FFA300781E10 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Launch.strings"; sourceTree = "<group>"; };
+		D741097919D3003800781E10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FilesViewCell.xib; sourceTree = "<group>"; };
+		D741097C19D3004C00781E10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FilesViewCell.strings; sourceTree = "<group>"; };
+		D741097E19D3005600781E10 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/FilesViewCell.strings"; sourceTree = "<group>"; };
+		D741098619D301EB00781E10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D741098819D301F200781E10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D741098919D301F400781E10 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D75985C319D0F7A500F68BDF /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		D77213B319D03F78006FCD62 /* Coliseu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coliseu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77213B719D03F78006FCD62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,9 +136,12 @@
 				D77213BA19D03F78006FCD62 /* MainViewController.swift */,
 				D787FF5019D1C6CD00EFFF78 /* FilesView.xib */,
 				D787FF4519D1892000EFFF78 /* FilesViewController.swift */,
+				D741097A19D3003800781E10 /* FilesViewCell.xib */,
+				D741097119D2D59B00781E10 /* FilesViewCell.swift */,
 				D77213BC19D03F78006FCD62 /* Launch.storyboard */,
 				D77213BF19D03F78006FCD62 /* Images.xcassets */,
 				D77213B619D03F78006FCD62 /* Supporting Files */,
+				D741098719D301EB00781E10 /* Localizable.strings */,
 			);
 			path = Coliseu;
 			sourceTree = "<group>";
@@ -231,6 +245,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-PT",
 			);
 			mainGroup = D77213AA19D03F78006FCD62;
 			productRefGroup = D77213B419D03F78006FCD62 /* Products */;
@@ -272,6 +287,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D787FF5119D1C6CD00EFFF78 /* FilesView.xib in Resources */,
+				D741098519D301EB00781E10 /* Localizable.strings in Resources */,
+				D741097819D3003800781E10 /* FilesViewCell.xib in Resources */,
 				D77213EF19D0BCBF006FCD62 /* MainView.xib in Resources */,
 				D77213BE19D03F78006FCD62 /* Launch.storyboard in Resources */,
 				D77213C019D03F78006FCD62 /* Images.xcassets in Resources */,
@@ -296,6 +313,7 @@
 				D787FF4619D1892000EFFF78 /* FilesViewController.swift in Sources */,
 				D77213B919D03F78006FCD62 /* AppDelegate.swift in Sources */,
 				D75985C419D0F7A500F68BDF /* AppData.swift in Sources */,
+				D741097219D2D59B00781E10 /* FilesViewCell.swift in Sources */,
 				D787FF3719D112A800EFFF78 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,10 +337,31 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		D741097A19D3003800781E10 /* FilesViewCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D741097919D3003800781E10 /* Base */,
+				D741097C19D3004C00781E10 /* en */,
+				D741097E19D3005600781E10 /* pt-PT */,
+			);
+			name = FilesViewCell.xib;
+			sourceTree = "<group>";
+		};
+		D741098719D301EB00781E10 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D741098619D301EB00781E10 /* Base */,
+				D741098819D301F200781E10 /* en */,
+				D741098919D301F400781E10 /* pt-PT */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D77213BC19D03F78006FCD62 /* Launch.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D77213BD19D03F78006FCD62 /* Base */,
+				D741097719D2FFA300781E10 /* pt-PT */,
 			);
 			name = Launch.storyboard;
 			sourceTree = "<group>";

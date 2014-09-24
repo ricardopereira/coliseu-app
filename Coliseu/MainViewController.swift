@@ -28,7 +28,7 @@ class MainViewController: UIViewController
     override func loadView()
     {
         super.loadView()
-        //self.view = MainView(frame: UIScreen.mainScreen().bounds)
+
     }
 
     override func viewDidLoad()
@@ -39,8 +39,6 @@ class MainViewController: UIViewController
 
         // Show files URLs
         forEachFile { (fileUrl) -> Bool in
-            NSLog("%@",fileUrl.absoluteString!)
-
             self.player!.audioList.append(fileUrl)
             return true;
         }
@@ -67,11 +65,36 @@ class MainViewController: UIViewController
         // Remover o ficheiro que já fez o download com sucesso
         // Melhorar o refrescamento
 
-        if let lastFileUrl = player!.audioList.last as NSURL? {
-            player!.prepareAudio(lastFileUrl)
+        if let firstFileUrl = player!.audioList.first as NSURL? {
+            player!.prepareAudio(firstFileUrl)
         }
 
         refreshView()
+    }
+
+    override func viewWillAppear(animated: Bool)
+    {
+        configureView()
+    }
+
+// MARK: View
+
+    func configureView()
+    {
+        // Navigation
+        if let navigation = navigationController {
+            navigation.navigationBarHidden = true
+        }
+
+        // Player
+        if let player = player {
+            player.playerDidStart = { () -> () in
+                UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
+            }
+            player.playerDidStop = { () -> () in
+                UIApplication.sharedApplication().endReceivingRemoteControlEvents()
+            }
+        }
     }
 
     func refreshView()
@@ -138,7 +161,6 @@ class MainViewController: UIViewController
     func didPressButtonPlay(sender: AnyObject?)
     {
         if let lastFileUrl = player!.audioList.last as NSURL? {
-            UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
             if player!.audioPlayer.playing {
                 player!.pauseAudio();
             } else {
@@ -151,11 +173,6 @@ class MainViewController: UIViewController
     {
         if let firstFileUrl = player!.audioList.first as NSURL? {
             player!.stopAudio()
-            // Teste
-            if let lastFileUrl = player!.audioList.last as NSURL? {
-                player!.prepareAudio(lastFileUrl)
-            }
-            UIApplication.sharedApplication().endReceivingRemoteControlEvents()
         }
     }
 
