@@ -8,20 +8,12 @@
 
 import UIKit
 
-protocol TableViewProtocol: UITableViewDelegate, UITableViewDataSource
-{
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
-}
-
 class FilesViewController: UIViewController
 {
     private let cellIdentifier = "Cell"
 
-    var files: [NSURL]?
+    var files: [AudioFile]?
+    var player: AudioPlayer?
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -97,9 +89,10 @@ extension FilesViewController: TableViewProtocol
     {
         var cellRow = UITableViewCell()
 
-        if let filesList = files{
+        if let filesList = files {
             if let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as FilesViewCell? {
-                cellRow = cell.configure("MP3 - " + indexPath.item.description, filesList[indexPath.row].absoluteString!)
+                let audioFile = filesList[indexPath.row]
+                cellRow = cell.configure(audioFile.title, audioFile.fileName)
             }
         }
         return cellRow
@@ -107,10 +100,10 @@ extension FilesViewController: TableViewProtocol
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        if player == nil {
+            return
+        }
+        player!.playAudio(indexPath.row);
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-
-    //func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
-
-    //func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
 }

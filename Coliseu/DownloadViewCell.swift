@@ -1,14 +1,14 @@
 //
-//  FilesViewCell.swift
+//  DownloadViewCell.swift
 //  Coliseu
 //
-//  Created by Ricardo Pereira on 24/09/2014.
+//  Created by Ricardo Pereira on 25/09/2014.
 //  Copyright (c) 2014 Ricardo Pereira. All rights reserved.
 //
 
 import UIKit
 
-class FilesViewCell: UITableViewCell
+class DownloadViewCell: UITableViewCell
 {
     // Fields
     @IBOutlet weak var labelTitle: UILabel!
@@ -32,12 +32,5 @@ class FilesViewCell: UITableViewCell
         labelFilename.lineBreakMode = NSLineBreakMode.ByCharWrapping
         labelFilename.numberOfLines = 0
         return self
-    }
-
-    override func layoutSubviews()
-    {
-        super.layoutSubviews()
-        // ?
-        //labelFilename.preferredMaxLayoutWidth = frame.width
     }
 }

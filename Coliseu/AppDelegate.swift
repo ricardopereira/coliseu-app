@@ -14,22 +14,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var navigationController: UINavigationController?
 
-    var memData: AppData?
+    var appCtrl = AppController()
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        memData = AppData()
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
         // UITabBarController or UINavigationController or UISplitViewController
         navigationController = UINavigationController()
         navigationController!.navigationBar.translucent = false
         navigationController!.navigationBarHidden = true
 
-        let mainView = MainViewController(nibName: "MainView", bundle: nil)
-        mainView.memData = memData
+        // Root view
+        let mainView = MainViewController(nibName: "MainView", appCtrl: appCtrl)
         mainView.edgesForExtendedLayout = UIRectEdge.None
         mainView.extendedLayoutIncludesOpaqueBars = false
 
         navigationController!.pushViewController(mainView, animated: false)
 
+        // Assign root
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.backgroundColor = UIColor.whiteColor()
         window!.makeKeyAndVisible()
@@ -46,30 +47,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillTerminate(application: UIApplication) {
+    func applicationWillTerminate(application: UIApplication)
+    {
         UIApplication.sharedApplication().endReceivingRemoteControlEvents()
     }
 
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!) {
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!)
+    {
         // Device token
         var characterSet: NSCharacterSet = NSCharacterSet(charactersInString: "<>")
-
+        // Translate
         var deviceTokenString: String = (deviceToken.description as NSString)
             .stringByTrimmingCharactersInSet(characterSet)
             .stringByReplacingOccurrencesOfString(" ", withString: "") as String
-
-        if let navigation = window!.rootViewController as UINavigationController? {
-            if let mainView = navigation.topViewController as MainViewController? {
-                mainView.deviceToken = deviceTokenString
-            }
-        }
+        // Assign to Root
+        appCtrl.data.deviceToken = deviceTokenString
     }
 
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!) {
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!)
+    {
         println("Couldn't register: \(error)")
     }
 
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void)
+    {
         // If the app is running, the app calls this method to process incoming remote notifications
         NSLog("didReceiveRemoteNotification")
 
@@ -78,17 +79,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // New notification
                 handleNotification(application.applicationState, title as String, fileName as String)
                 completionHandler(UIBackgroundFetchResult.NewData)
-            }
-            else {
-                completionHandler(UIBackgroundFetchResult.NoData)
+                return
             }
         }
-        else {
-            completionHandler(UIBackgroundFetchResult.NoData)
-        }
+        completionHandler(UIBackgroundFetchResult.NoData)
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
+    func applicationDidBecomeActive(application: UIApplication)
+    {
         // Remover as notificações
         application.applicationIconBadgeNumber = 0
     }
@@ -99,13 +97,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case UIApplicationState.Active:
             // Application is running in foreground
             NSLog("Foreground notification")
-            memData!.filesToDownload.append(fileName)
-
-            if let navigation = window!.rootViewController as UINavigationController? {
-                if let mainView = navigation.topViewController as MainViewController? {
-                    mainView.viewDidAppear(false);
-                }
-            }
         case UIApplicationState.Background, UIApplicationState.Inactive:
             // Application is brought from background or launched after terminated
             handleNotification(UIApplicationState.Active,title,fileName)

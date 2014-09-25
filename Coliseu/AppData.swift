@@ -8,9 +8,19 @@
 
 import Foundation
 
-class AppData {
+class AppData
+{
+    var deviceToken: String?
 
-    var filesSubmited: [String] = []
-    var filesToDownload: [String] = []
+    let remoteServer = ServerController()
+    // Files list
+    var filesLocalStorage: [AudioFile] = []
+    var filesReady: [AudioFile] {
+        get { return remoteServer.filesToDownload }
+    }
 
+    init()
+    {
+
+    }
 }

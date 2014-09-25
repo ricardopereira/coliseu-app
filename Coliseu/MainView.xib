@@ -61,7 +61,7 @@
                         <constraint firstAttribute="height" constant="38" id="b9g-Ud-3F2"/>
                         <constraint firstAttribute="width" constant="161" id="kAa-Ac-9Lc"/>
                     </constraints>
-                    <state key="normal" title="Remove all files">
+                    <state key="normal" title="Notifications">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -82,7 +82,6 @@
                 <constraint firstAttribute="centerX" secondItem="e7b-Dt-0QE" secondAttribute="centerX" constant="-0.5" id="5XV-az-ad3"/>
                 <constraint firstAttribute="centerY" secondItem="qlt-wX-Esb" secondAttribute="centerY" constant="154.5" id="FOn-tv-8xq"/>
                 <constraint firstAttribute="centerX" secondItem="EKb-eg-7Hb" secondAttribute="centerX" constant="-0.5" id="M82-4a-3ot"/>
-                <constraint firstAttribute="centerX" secondItem="3jm-m0-38t" secondAttribute="centerX" constant="-0.5" id="Oa5-yu-dBk"/>
                 <constraint firstAttribute="centerY" secondItem="EKb-eg-7Hb" secondAttribute="centerY" constant="96.5" id="Ret-7o-sh2"/>
                 <constraint firstAttribute="centerY" secondItem="4gJ-kL-yoo" secondAttribute="centerY" constant="200" id="aas-PE-jE3"/>
                 <constraint firstAttribute="centerY" secondItem="3jm-m0-38t" secondAttribute="centerY" constant="-67" id="ct1-KH-vOc"/>
@@ -92,6 +91,7 @@
                 <constraint firstAttribute="centerX" secondItem="4gJ-kL-yoo" secondAttribute="centerX" id="h2u-o0-g6t"/>
                 <constraint firstAttribute="centerX" secondItem="qlt-wX-Esb" secondAttribute="centerX" id="mHX-GW-2SX"/>
                 <constraint firstItem="4gJ-kL-yoo" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="nz1-kq-6wJ"/>
+                <constraint firstAttribute="centerX" secondItem="3jm-m0-38t" secondAttribute="centerX" constant="-0.5" id="thZ-oi-Dqv"/>
             </constraints>
         </view>
     </objects>

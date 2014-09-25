@@ -7,23 +7,29 @@
 //
 
 import UIKit
-import Alamofire
-
-let api = "http://99.ip-5-196-8.eu:9000/api"
-let dir = "YouTube";
 
 class MainViewController: UIViewController
 {
-    var player: AudioPlayer?;
-    var memData: AppData?
-    var deviceToken: String?
-
+    let appCtrl: AppController
+    
+    // Outlets
     @IBOutlet weak var fieldUrl: UITextField!
     @IBOutlet weak var buttonSubmit: UIButton!
     @IBOutlet weak var buttonPlay: UIButton!
     @IBOutlet weak var buttonStop: UIButton!
     @IBOutlet weak var buttonRemoveAll: UIButton!
     @IBOutlet weak var buttonShowFiles: UIButton!
+
+    required init(nibName nibNameOrNil: String?, appCtrl: AppController)
+    {
+        self.appCtrl = appCtrl
+        super.init(nibName: nibNameOrNil, bundle: nil)
+    }
+
+    required init(coder aDecoder: NSCoder)
+    {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func loadView()
     {
@@ -34,41 +40,21 @@ class MainViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        player = AudioPlayer()
-
-        // Show files URLs
-        forEachFile { (fileUrl) -> Bool in
-            self.player!.audioList.append(fileUrl)
-            return true;
-        }
+        configurePlayer()
 
         refreshView()
 
-        // View targets
-        buttonSubmit.addTarget(self, action: "didPressButtonSubmit:", forControlEvents: UIControlEvents.TouchUpInside)
-        buttonPlay.addTarget(self, action: "didPressButtonPlay:", forControlEvents: UIControlEvents.TouchUpInside)
-        buttonStop.addTarget(self, action: "didPressButtonStop:", forControlEvents: UIControlEvents.TouchUpInside)
-        buttonRemoveAll.addTarget(self, action: "didPressButtonRemoveAll:", forControlEvents: UIControlEvents.TouchUpInside)
-        buttonShowFiles.addTarget(self, action: "didPressButtonShowFiles:", forControlEvents: UIControlEvents.TouchUpInside)
+        // View targets = Events
+        buttonSubmit.addTarget(self, action: "didPressSubmit:", forControlEvents: UIControlEvents.TouchUpInside)
+        buttonPlay.addTarget(self, action: "didPressPlay:", forControlEvents: UIControlEvents.TouchUpInside)
+        buttonStop.addTarget(self, action: "didPressStop:", forControlEvents: UIControlEvents.TouchUpInside)
+        buttonRemoveAll.addTarget(self, action: "didPressDownloadFiles:", forControlEvents: UIControlEvents.TouchUpInside)
+        buttonShowFiles.addTarget(self, action: "didPressShowFiles:", forControlEvents: UIControlEvents.TouchUpInside)
     }
 
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated);
-
-        for data in memData!.filesToDownload {
-            download(data)
-        }
-        memData!.filesToDownload.removeAll(keepCapacity: false)
-
-        // Remover o ficheiro que já fez o download com sucesso
-        // Melhorar o refrescamento
-
-        if let firstFileUrl = player!.audioList.first as NSURL? {
-            player!.prepareAudio(firstFileUrl)
-        }
-
         refreshView()
     }
 
@@ -79,27 +65,31 @@ class MainViewController: UIViewController
 
 // MARK: View
 
+    func configurePlayer()
+    {
+        appCtrl.player.startSession()
+        appCtrl.player.audioList = appCtrl.data.filesLocalStorage;
+        // Player
+        appCtrl.player.playerDidStart = { () -> () in
+            UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
+        }
+        appCtrl.player.playerDidStop = { () -> () in
+            UIApplication.sharedApplication().endReceivingRemoteControlEvents()
+        }
+    }
+
     func configureView()
     {
         // Navigation
         if let navigation = navigationController {
             navigation.navigationBarHidden = true
         }
-
-        // Player
-        if let player = player {
-            player.playerDidStart = { () -> () in
-                UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
-            }
-            player.playerDidStop = { () -> () in
-                UIApplication.sharedApplication().endReceivingRemoteControlEvents()
-            }
-        }
     }
 
     func refreshView()
     {
-        buttonPlay.enabled = player!.audioList.count > 0
+        //buttonPlay.enabled = player.audioList.count > 0
+
         buttonPlay.setNeedsDisplay()
         view.setNeedsDisplay()
     }
@@ -122,61 +112,27 @@ class MainViewController: UIViewController
         return result
     }
 
-    func download(fileName: String)
-    {
-        Alamofire.download(.GET, api + "/load?file=" + fileName, { (temporaryURL, response) in //Destination
-            if let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory,inDomains: .UserDomainMask)[0] as? NSURL
-            {
-                NSLog("Suggested %@%@",directoryURL.absoluteString!,response.suggestedFilename!)
-
-                let pathComponent = response.suggestedFilename
-                return directoryURL.URLByAppendingPathComponent(pathComponent!)
-            }
-            return temporaryURL
-        })
-        .progress { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
-            println(totalBytesRead)
-        }
-        .response { (request, response, _, error) in
-
-        }
-    }
-
 // MARK: Actions
 
-    func didPressButtonSubmit(sender: AnyObject?)
+    func didPressSubmit(sender: AnyObject?)
     {
-        if (deviceToken == nil) {
-            return;
+        if appCtrl.data.deviceToken == nil {
+            return
         }
-
-        let url = api + "/submit?url=" + fieldUrl.text + "&token=" + deviceToken!
-
-        Alamofire.request(.GET, url).responseString { (req: NSURLRequest, res: NSHTTPURLResponse?, str: String?, err: NSError?) -> Void in
-            // Is alive
-            println(str!);
-        }
+        appCtrl.data.remoteServer.submit(fieldUrl.text, appCtrl.data.deviceToken!)
     }
 
-    func didPressButtonPlay(sender: AnyObject?)
+    func didPressPlay(sender: AnyObject?)
     {
-        if let lastFileUrl = player!.audioList.last as NSURL? {
-            if player!.audioPlayer.playing {
-                player!.pauseAudio();
-            } else {
-                player!.playAudio()
-            }
-        }
+
     }
 
-    func didPressButtonStop(sender: AnyObject?)
+    func didPressStop(sender: AnyObject?)
     {
-        if let firstFileUrl = player!.audioList.first as NSURL? {
-            player!.stopAudio()
-        }
+
     }
 
-    func didPressButtonRemoveAll(sender: AnyObject?)
+    func didPressRemoveAll(sender: AnyObject?)
     {
         // Show files URLs
         forEachFile { (fileUrl) -> Bool in
@@ -188,20 +144,31 @@ class MainViewController: UIViewController
         refreshView()
     }
 
-    func didPressButtonShowFiles(sender: AnyObject?)
+    func didPressShowFiles(sender: AnyObject?)
     {
-        var files: [NSURL] = []
+        // Renew list of local storage
+        appCtrl.data.filesLocalStorage.removeAll(keepCapacity: false)
+
         // Show files URLs
         forEachFile { (fileUrl) -> Bool in
             // Remove file
-            var error = NSErrorPointer()
-            files.append(fileUrl)
+            self.appCtrl.data.filesLocalStorage.append(AudioFile(url: fileUrl))
             return true
         }
 
+        // Open view
         let filesView = FilesViewController(nibName: "FilesView", bundle: nil)
-        filesView.files = files
-        self.navigationController!.pushViewController(filesView, animated: true)
+        // ?
+        filesView.files = appCtrl.data.filesLocalStorage
+        appCtrl.player.audioList = appCtrl.data.filesLocalStorage
+        filesView.player = appCtrl.player
+        navigationController!.pushViewController(filesView, animated: true)
+    }
+
+    func didPressDownloadFiles(sender: AnyObject?)
+    {
+        let notificationsView = DownloadViewController(nibName: "DownloadView", appCtrl: appCtrl)
+        navigationController!.pushViewController(notificationsView, animated: true)
     }
 
 // MARK: Remote
@@ -215,9 +182,9 @@ class MainViewController: UIViewController
             case UIEventSubtype.RemoteControlPreviousTrack:
                 NSLog("Prev track")
             case UIEventSubtype.RemoteControlPlay:
-                didPressButtonPlay(nil)
+                appCtrl.player.playAudio();
             case UIEventSubtype.RemoteControlPause:
-                player!.pauseAudio();
+                appCtrl.player.pauseAudio();
             default:
                 NSLog("Pause/Play")
             }
