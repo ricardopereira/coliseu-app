@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Coliseu
 //
 //  Created by Ricardo Pereira on 22/09/2014.

@@ -19,10 +19,11 @@ class DownloadViewCell: UITableViewCell
     {
         super.awakeFromNib()
         // For example: to associate delegates for fields
+
     }
 
     func configure(title: String, _ filename: String, _ progress: Float) -> UITableViewCell
-    {
+    {        
         labelTitle.text = title
         labelTitle.lineBreakMode = NSLineBreakMode.ByWordWrapping
         labelTitle.numberOfLines = 0
@@ -34,6 +35,13 @@ class DownloadViewCell: UITableViewCell
         labelFilename.numberOfLines = 0
 
         progressBar.progress = progress
+
+        if progress == 1 {
+            let okView = DoneView(frame: CGRectMake(2, 2, 50, 50))
+            okView.backgroundColor = UIColor.clearColor();
+            contentView.addSubview(okView)
+        }
+
         return self
     }
 }

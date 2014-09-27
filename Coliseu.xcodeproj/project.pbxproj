@@ -11,6 +11,7 @@
 		D741097819D3003800781E10 /* FilesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D741097A19D3003800781E10 /* FilesViewCell.xib */; };
 		D741098519D301EB00781E10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D741098719D301EB00781E10 /* Localizable.strings */; };
 		D741098B19D318E900781E10 /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D741098A19D318E900781E10 /* AudioFile.swift */; };
+		D75390CA19D637CF0052989E /* DoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75390C919D637CF0052989E /* DoneView.swift */; };
 		D75985C419D0F7A500F68BDF /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75985C319D0F7A500F68BDF /* AppData.swift */; };
 		D77213B919D03F78006FCD62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77213B819D03F78006FCD62 /* AppDelegate.swift */; };
 		D77213BB19D03F78006FCD62 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77213BA19D03F78006FCD62 /* MainViewController.swift */; };
@@ -80,6 +81,7 @@
 		D741098819D301F200781E10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D741098919D301F400781E10 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D741098A19D318E900781E10 /* AudioFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudioFile.swift; path = Model/AudioFile.swift; sourceTree = "<group>"; };
+		D75390C919D637CF0052989E /* DoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneView.swift; sourceTree = "<group>"; };
 		D75985C319D0F7A500F68BDF /* AppData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		D77213B319D03F78006FCD62 /* Coliseu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coliseu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77213B719D03F78006FCD62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -136,6 +138,14 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		D75390CD19D63F270052989E /* CodeViews */ = {
+			isa = PBXGroup;
+			children = (
+				D75390C919D637CF0052989E /* DoneView.swift */,
+			);
+			name = CodeViews;
+			sourceTree = "<group>";
+		};
 		D77213AA19D03F78006FCD62 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 				D741097119D2D59B00781E10 /* FilesViewCell.swift */,
 				D7F2529619D4A412008F7135 /* DownloadViewController.swift */,
 				D7F2529819D4A41F008F7135 /* DownloadViewCell.swift */,
+				D75390CD19D63F270052989E /* CodeViews */,
 				D741098C19D31B5B00781E10 /* Views */,
 				D77213BF19D03F78006FCD62 /* Images.xcassets */,
 				D77213B619D03F78006FCD62 /* Supporting Files */,
@@ -344,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7F2529919D4A41F008F7135 /* DownloadViewCell.swift in Sources */,
+				D75390CA19D637CF0052989E /* DoneView.swift in Sources */,
 				D77213BB19D03F78006FCD62 /* MainViewController.swift in Sources */,
 				D787FF4619D1892000EFFF78 /* FilesViewController.swift in Sources */,
 				D77213B919D03F78006FCD62 /* AppDelegate.swift in Sources */,
