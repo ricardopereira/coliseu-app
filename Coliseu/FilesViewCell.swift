@@ -18,6 +18,7 @@ class FilesViewCell: UITableViewCell
     {
         super.awakeFromNib()
         // For example: to associate delegates for fields
+        
     }
 
     func configure(title: String, _ filename: String) -> UITableViewCell

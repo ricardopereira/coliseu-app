@@ -31,47 +31,45 @@ class ServerController
         }
     }
 
-    func download(fileName: String)
+    func download(fileName: String, _ deviceToken: String, progressEvent: (totalBytesRead: Int64, totalBytesExpectedToRead: Int64) -> (), completionRequest: (error: NSError?) -> ())
     {
-        Alamofire.download(.GET, api + "load?file=" + fileName, { (temporaryURL, response) in //Destination
+        let url = api + "load?file=" + fileName + "&token=" + deviceToken
+
+        Alamofire.download(.GET, url, { (temporaryURL, response) in //Destination
             if let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory,inDomains: .UserDomainMask)[0] as? NSURL
             {
-                NSLog("Suggested %@%@",directoryURL.absoluteString!,response.suggestedFilename!)
-
                 let pathComponent = response.suggestedFilename
                 return directoryURL.URLByAppendingPathComponent(pathComponent!)
             }
             return temporaryURL
         })
         .progress { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
-            println(totalBytesRead)
+            //println(totalBytesRead)
+            progressEvent(totalBytesRead: totalBytesRead, totalBytesExpectedToRead: totalBytesExpectedToRead)
+        }
+        .response { (request, response, _, error) in
+            println(response)
+            completionRequest(error: error)
         }
     }
 
-    func downloadAll()
-    {
-        // Download all of the files
-        for data in filesToDownload {
-            download(data.fileName)
-        }
-        filesToDownload.removeAll(keepCapacity: false)
-    }
-
-    func getNotifications(deviceToken: String, completionRequest: (sender: AnyObject?) -> ())
+    func getNotifications(deviceToken: String, completionRequest: (response: AnyObject?) -> ())
     {
         Alamofire.request(.GET, api+"ready", parameters: ["token": deviceToken])
         .responseJSON { (_, _, JSON, _) in
-            if let data = JSON as? NSArray {
-                if data.count > 0 {
-                    self.filesToDownload.removeAll(keepCapacity: false)
+            if let data = JSON as? NSArray
+            {
+                self.filesToDownload.removeAll(keepCapacity: false)
+                if data.count > 0
+                {
                     for item in data {
                         let title = item["title"] as String!
                         let filename = item["filename"] as String!
 
                         self.filesToDownload.append(AudioFile(title, filename))
                     }
-                    completionRequest(sender: JSON)
                 }
+                completionRequest(response: JSON)
             }
         }
     }

@@ -48,7 +48,7 @@ class DownloadViewController: UIViewController
             navigation.navigationBarHidden = false
         }
         // Load list from server
-        appCtrl.data.remoteServer.getNotifications(appCtrl.data.deviceToken!) { (sender) -> () in
+        appCtrl.data.remoteServer.getNotifications(appCtrl.data.deviceToken!) { (response) -> () in
             self.tableView.reloadData()
         }
     }
@@ -67,18 +67,59 @@ extension DownloadViewController: TableViewProtocol
 
         if let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as DownloadViewCell? {
             let audioFile = appCtrl.data.filesReady[indexPath.row]
-            cellRow = cell.configure(audioFile.title, audioFile.fileName)
+            cellRow = cell.configure(audioFile.title, audioFile.fileName, audioFile.progress)
         }
         return cellRow
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
+        let audioFile = appCtrl.data.filesReady[indexPath.row]
 
+        if audioFile.progress == 1 {
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            return
+        }
+
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as DownloadViewCell?
+        if (cell == nil) {
+            return
+        }
+
+        appCtrl.data.remoteServer.download(audioFile.fileName, appCtrl.data.deviceToken!,
+            progressEvent: { (totalBytesRead, totalBytesExpectedToRead) -> () in
+                // Update cell
+                let audioFile = self.appCtrl.data.filesReady[indexPath.row]
+                // Workaround: maybe a bug from Swift!
+                audioFile.progress = Float(totalBytesRead) / Float(totalBytesExpectedToRead)
+
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    cell!.progressBar.progress = audioFile.progress
+                    cell!.progressBar.setNeedsDisplay()
+                })
+            },
+            completionRequest: { (error) -> () in
+                // Update cell
+                let audioFile = self.appCtrl.data.filesReady[indexPath.row]
+                audioFile.progress = 1
+
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    tableView.beginUpdates()
+                    tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+                    tableView.endUpdates()
+                })
+            })
+
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath)
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
+        return 65
+    }
 
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 65
     }
 }

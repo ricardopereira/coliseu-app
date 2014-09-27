@@ -13,6 +13,7 @@ class DownloadViewCell: UITableViewCell
     // Fields
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelFilename: UILabel!
+    @IBOutlet weak var progressBar: UIProgressView!
 
     override func awakeFromNib()
     {
@@ -20,7 +21,7 @@ class DownloadViewCell: UITableViewCell
         // For example: to associate delegates for fields
     }
 
-    func configure(title: String, _ filename: String) -> UITableViewCell
+    func configure(title: String, _ filename: String, _ progress: Float) -> UITableViewCell
     {
         labelTitle.text = title
         labelTitle.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -31,6 +32,8 @@ class DownloadViewCell: UITableViewCell
         labelFilename.text = filename
         labelFilename.lineBreakMode = NSLineBreakMode.ByCharWrapping
         labelFilename.numberOfLines = 0
+
+        progressBar.progress = progress
         return self
     }
 }

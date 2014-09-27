@@ -13,24 +13,28 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpz-Ql-yVl">
-                        <rect key="frame" x="54" y="8" width="42" height="21"/>
+                        <rect key="frame" x="54" y="3" width="258" height="21"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="og0-lC-0QR">
-                        <rect key="frame" x="54" y="35" width="42" height="21"/>
+                        <rect key="frame" x="54" y="22" width="258" height="21"/>
                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EKe-es-KsY">
+                        <rect key="frame" x="54" y="50" width="258" height="2"/>
+                    </progressView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="labelFilename" destination="og0-lC-0QR" id="TX1-24-tUZ"/>
                 <outlet property="labelTitle" destination="qpz-Ql-yVl" id="XuX-Vh-aZS"/>
+                <outlet property="progressBar" destination="EKe-es-KsY" id="jTi-ab-b6m"/>
             </connections>
-            <point key="canvasLocation" x="146" y="189.5"/>
+            <point key="canvasLocation" x="146" y="186.5"/>
         </tableViewCell>
     </objects>
 </document>
