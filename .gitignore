@@ -26,5 +26,4 @@ DerivedData
 Pods/
 
 # Submodules
-Alamofire/
-Alamofire
+Components/

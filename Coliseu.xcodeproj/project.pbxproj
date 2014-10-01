@@ -18,8 +18,6 @@
 		D77213BE19D03F78006FCD62 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D77213BC19D03F78006FCD62 /* Launch.storyboard */; };
 		D77213C019D03F78006FCD62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D77213BF19D03F78006FCD62 /* Images.xcassets */; };
 		D77213CF19D03F79006FCD62 /* ColiseuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77213CE19D03F79006FCD62 /* ColiseuTests.swift */; };
-		D77213E319D07932006FCD62 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D77213E019D078BA006FCD62 /* Alamofire.framework */; };
-		D77213E519D07995006FCD62 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D77213E019D078BA006FCD62 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D77213EF19D0BCBF006FCD62 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77213EE19D0BCBF006FCD62 /* MainView.xib */; };
 		D787FF3719D112A800EFFF78 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D787FF3619D112A800EFFF78 /* AudioPlayer.swift */; };
 		D787FF4619D1892000EFFF78 /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D787FF4519D1892000EFFF78 /* FilesViewController.swift */; };
@@ -41,20 +39,6 @@
 			remoteGlobalIDString = D77213B219D03F78006FCD62;
 			remoteInfo = Coliseu;
 		};
-		D77213DF19D078BA006FCD62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D77213DA19D078B9006FCD62 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
-		D77213E119D078BA006FCD62 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D77213DA19D078B9006FCD62 /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
-			remoteInfo = AlamofireTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -64,7 +48,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D77213E519D07995006FCD62 /* Alamofire.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,7 +75,6 @@
 		D77213C819D03F79006FCD62 /* ColiseuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColiseuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77213CD19D03F79006FCD62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D77213CE19D03F79006FCD62 /* ColiseuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColiseuTests.swift; sourceTree = "<group>"; };
-		D77213DA19D078B9006FCD62 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		D77213EE19D0BCBF006FCD62 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		D787FF3619D112A800EFFF78 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		D787FF4519D1892000EFFF78 /* FilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +93,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D77213E319D07932006FCD62 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +133,6 @@
 				D77213B519D03F78006FCD62 /* Coliseu */,
 				D77213CB19D03F79006FCD62 /* ColiseuTests */,
 				D77213B419D03F78006FCD62 /* Products */,
-				D77213DA19D078B9006FCD62 /* Alamofire.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,15 +192,6 @@
 				D77213CD19D03F79006FCD62 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D77213DB19D078B9006FCD62 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D77213E019D078BA006FCD62 /* Alamofire.framework */,
-				D77213E219D078BA006FCD62 /* AlamofireTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,12 +264,6 @@
 			mainGroup = D77213AA19D03F78006FCD62;
 			productRefGroup = D77213B419D03F78006FCD62 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = D77213DB19D078B9006FCD62 /* Products */;
-					ProjectRef = D77213DA19D078B9006FCD62 /* Alamofire.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D77213B219D03F78006FCD62 /* Coliseu */,
@@ -306,23 +271,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		D77213E019D078BA006FCD62 /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = D77213DF19D078BA006FCD62 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		D77213E219D078BA006FCD62 /* AlamofireTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AlamofireTests.xctest;
-			remoteRef = D77213E119D078BA006FCD62 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D77213B119D03F78006FCD62 /* Resources */ = {
