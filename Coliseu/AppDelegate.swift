@@ -12,29 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var navigationController: UINavigationController?
-
     var appCtrl = AppController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        // UITabBarController or UINavigationController or UISplitViewController
-        navigationController = UINavigationController()
-        navigationController!.navigationBar.translucent = false
-        navigationController!.navigationBarHidden = true
-
-        // Root view
-        let mainView = MainViewController(nibName: "MainView", appCtrl: appCtrl)
-        mainView.edgesForExtendedLayout = UIRectEdge.None
-        mainView.extendedLayoutIncludesOpaqueBars = false
-
-        navigationController!.pushViewController(mainView, animated: false)
-
         // Assign root
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.backgroundColor = UIColor.whiteColor()
         window!.makeKeyAndVisible()
-        window!.rootViewController = navigationController
+        window!.rootViewController = initViews()
 
         // Push Notifications
         UIApplication.sharedApplication().registerForRemoteNotifications()
@@ -43,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settings = UIUserNotificationSettings(forTypes: .Alert | .Badge, categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
 
-        //userInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
         return true
     }
 
@@ -66,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError!)
     {
-        println("Couldn't register: \(error)")
+        println("Couldn't regist: \(error)")
     }
 
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void)
@@ -103,4 +88,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+// MARK: Application Views
+
+    func initViews() -> UITabBarController
+    {
+        let tabBarController = UITabBarController()
+
+        // Player
+        let playerView = PlayerViewController(nibName: "MainView", appCtrl: appCtrl)
+        playerView.title = "Player"
+        playerView.edgesForExtendedLayout = UIRectEdge.None
+        playerView.extendedLayoutIncludesOpaqueBars = false
+
+        // Songs
+        let filesView = FilesViewController(nibName: "FilesView", bundle: nil)
+        filesView.title = "Songs"
+        filesView.files = appCtrl.data.filesLocalStorageg
+        filesView.player = appCtrl.player
+
+        // Notifications
+        let notificationsView = DownloadViewController(nibName: "DownloadView", appCtrl: appCtrl)
+        notificationsView.title = "Notifications"
+
+        // Settings
+        let settingsView = UIViewController()
+        settingsView.title = "Settings"
+        settingsView.view = UIView()
+        settingsView.view.backgroundColor = UIColor.blueColor()
+
+        tabBarController.setViewControllers([playerView, filesView, notificationsView, settingsView], animated: false)
+        return tabBarController
+    }
 }

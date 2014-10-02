@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  PlayerViewController.swift
 //  Coliseu
 //
 //  Created by Ricardo Pereira on 22/09/2014.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController
+class PlayerViewController: UIViewController
 {
     let appCtrl: AppController
     

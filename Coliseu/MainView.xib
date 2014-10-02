@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Coliseu" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerViewController" customModule="Coliseu" customModuleProvider="target">
             <connections>
                 <outlet property="buttonPlay" destination="EKb-eg-7Hb" id="YvC-S6-BfM"/>
                 <outlet property="buttonRemoveAll" destination="e7b-Dt-0QE" id="Um4-iA-mZa"/>

@@ -34,6 +34,9 @@ class FilesViewController: UIViewController
         // Configure
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+
+        // ?
+        player!.audioList = files
     }
 
 
