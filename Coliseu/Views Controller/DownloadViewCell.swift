@@ -36,11 +36,11 @@ class DownloadViewCell: UITableViewCell
 
         progressBar.progress = progress
 
-        if progress == 1 {
-            let okView = DoneView(frame: CGRectMake(2, 2, 50, 50))
-            okView.backgroundColor = UIColor.clearColor();
-            contentView.addSubview(okView)
-        }
+        //if progress == 1 {
+        //    let okView = DoneView(frame: CGRectMake(2, 2, 50, 50))
+        //    okView.backgroundColor = UIColor.clearColor();
+        //    contentView.addSubview(okView)
+        //}
 
         return self
     }

@@ -1,5 +1,5 @@
 //
-//  CommonProtocols.swift
+//  AppProtocols.swift
 //  Coliseu
 //
 //  Created by Ricardo Pereira on 25/09/2014.
