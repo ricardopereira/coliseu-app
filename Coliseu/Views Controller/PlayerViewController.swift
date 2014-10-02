@@ -8,10 +8,8 @@
 
 import UIKit
 
-class PlayerViewController: UIViewController
+class PlayerViewController: UIBaseViewController
 {
-    let appCtrl: AppController
-    
     // Outlets
     @IBOutlet weak var fieldUrl: UITextField!
     @IBOutlet weak var buttonSubmit: UIButton!
@@ -19,23 +17,6 @@ class PlayerViewController: UIViewController
     @IBOutlet weak var buttonStop: UIButton!
     @IBOutlet weak var buttonRemoveAll: UIButton!
     @IBOutlet weak var buttonShowFiles: UIButton!
-
-    required init(nibName nibNameOrNil: String?, appCtrl: AppController)
-    {
-        self.appCtrl = appCtrl
-        super.init(nibName: nibNameOrNil, bundle: nil)
-    }
-
-    required init(coder aDecoder: NSCoder)
-    {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func loadView()
-    {
-        super.loadView()
-
-    }
 
     override func viewDidLoad()
     {
@@ -68,7 +49,7 @@ class PlayerViewController: UIViewController
     func configurePlayer()
     {
         appCtrl.player.startSession()
-        appCtrl.player.audioList = appCtrl.data.filesLocalStorage;
+
         // Player
         appCtrl.player.playerDidStart = { () -> () in
             UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
@@ -94,24 +75,6 @@ class PlayerViewController: UIViewController
         view.setNeedsDisplay()
     }
 
-// MARK: Files
-
-    func forEachFile(fileHandler: ((fileUrl: NSURL) -> Bool)) -> Bool
-    {
-        var result: Bool = false
-
-        if let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory,inDomains: .UserDomainMask)[0] as? NSURL {
-            var error = NSErrorPointer()
-
-            let filesFromFolder = NSFileManager.defaultManager().contentsOfDirectoryAtURL(directoryURL, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles, error: error)
-
-            for file in filesFromFolder! {
-                result = fileHandler(fileUrl: file as NSURL)
-            }
-        }
-        return result
-    }
-
 // MARK: Actions
 
     func didPressSubmit(sender: AnyObject?)
@@ -134,35 +97,13 @@ class PlayerViewController: UIViewController
 
     func didPressRemoveAll(sender: AnyObject?)
     {
-        // Show files URLs
-        forEachFile { (fileUrl) -> Bool in
-            // Remove file
-            var error = NSErrorPointer()
-            NSFileManager.defaultManager().removeItemAtURL(fileUrl, error: error)
-            return true
-        }
+
         refreshView()
     }
 
     func didPressShowFiles(sender: AnyObject?)
     {
-        // Renew list of local storage
-        appCtrl.data.filesLocalStorage.removeAll(keepCapacity: false)
 
-        // Show files URLs
-        forEachFile { (fileUrl) -> Bool in
-            // Remove file
-            self.appCtrl.data.filesLocalStorage.append(AudioFile(url: fileUrl))
-            return true
-        }
-
-        // Open view
-        let filesView = FilesViewController(nibName: "FilesView", bundle: nil)
-        // ?
-        filesView.files = appCtrl.data.filesLocalStorage
-        appCtrl.player.audioList = appCtrl.data.filesLocalStorage
-        filesView.player = appCtrl.player
-        navigationController!.pushViewController(filesView, animated: true)
     }
 
     func didPressDownloadFiles(sender: AnyObject?)

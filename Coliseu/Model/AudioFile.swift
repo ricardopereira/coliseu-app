@@ -6,8 +6,7 @@
 //  Copyright (c) 2014 Ricardo Pereira. All rights reserved.
 //
 
-import UIKit
-// ? - Teste for MetaData
+// ? - Test for MetaData
 import AVFoundation
 
 class AudioFile

@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Ricardo Pereira. All rights reserved.
 //
 
-import UIKit
 import Alamofire
 
 let api = "http://99.ip-5-196-8.eu:9000/api/"

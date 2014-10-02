@@ -97,14 +97,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Player
         let playerView = PlayerViewController(nibName: "MainView", appCtrl: appCtrl)
         playerView.title = "Player"
-        playerView.edgesForExtendedLayout = UIRectEdge.None
-        playerView.extendedLayoutIncludesOpaqueBars = false
 
         // Songs
-        let filesView = FilesViewController(nibName: "FilesView", bundle: nil)
+        let filesView = FilesViewController(nibName: "FilesView", appCtrl: appCtrl)
         filesView.title = "Songs"
-        filesView.files = appCtrl.data.filesLocalStorageg
-        filesView.player = appCtrl.player
 
         // Notifications
         let notificationsView = DownloadViewController(nibName: "DownloadView", appCtrl: appCtrl)
@@ -114,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settingsView = UIViewController()
         settingsView.title = "Settings"
         settingsView.view = UIView()
-        settingsView.view.backgroundColor = UIColor.blueColor()
+        settingsView.view.backgroundColor = UIColor.grayColor()
 
         tabBarController.setViewControllers([playerView, filesView, notificationsView, settingsView], animated: false)
         return tabBarController

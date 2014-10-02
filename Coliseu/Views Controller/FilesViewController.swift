@@ -8,12 +8,11 @@
 
 import UIKit
 
-class FilesViewController: UIViewController
+class FilesViewController: UIBaseViewController
 {
     private let cellIdentifier = "Cell"
-
-    var files: [AudioFile]?
-    var player: AudioPlayer?
+    // Files list
+    private var files: [AudioFile]!
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -34,11 +33,7 @@ class FilesViewController: UIViewController
         // Configure
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
-
-        // ?
-        player!.audioList = files
     }
-
 
     override func viewWillAppear(animated: Bool)
     {
@@ -47,6 +42,8 @@ class FilesViewController: UIViewController
         if let navigation = navigationController {
             navigation.navigationBarHidden = false
         }
+
+        files = appCtrl.data.getLocalFiles()
     }
 
     override func viewDidAppear(animated: Bool)
@@ -72,6 +69,7 @@ class FilesViewController: UIViewController
         super.viewDidDisappear(animated)
         // At this instance theres no Navigation bar!
     }
+
 }
 
 // MARK: - TableViewProtocol
@@ -103,10 +101,7 @@ extension FilesViewController: TableViewProtocol
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        if player == nil {
-            return
-        }
-        player!.playAudio(indexPath.row);
+        appCtrl.player.playAudio(indexPath.row, songsList: files)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

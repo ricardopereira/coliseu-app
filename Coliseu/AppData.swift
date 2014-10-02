@@ -6,15 +6,14 @@
 //  Copyright (c) 2014 Ricardo Pereira. All rights reserved.
 //
 
-import Foundation
-
 class AppData
 {
     var deviceToken: String?
 
     let remoteServer = ServerController()
-    // Files list
-    var filesLocalStorage: [AudioFile] = []
+    private let storage = StorageController()
+
+    // Notifications
     var filesReady: [AudioFile] {
         get { return remoteServer.filesToDownload }
     }
@@ -22,5 +21,10 @@ class AppData
     init()
     {
 
+    }
+
+    func getLocalFiles() -> [AudioFile]
+    {
+        return storage.getLocalFiles()
     }
 }

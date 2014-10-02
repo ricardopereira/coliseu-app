@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Ricardo Pereira. All rights reserved.
 //
 
-import Foundation
 import AVFoundation
 
 protocol AudioPlayerProtocol: AVAudioPlayerDelegate
@@ -26,7 +25,7 @@ class AudioPlayer: NSObject
     private var currentAudioIndex = 0
     private var currentAudioPath: NSURL?
     private var audioLength = 0.0
-    var audioList: [AudioFile]?
+    var songsList: [AudioFile]?
 
     // Events
     var playerDidStart: function?
@@ -36,8 +35,7 @@ class AudioPlayer: NSObject
     {
         // Inherited
         super.init()
-        // Audio Player
-        //audioPlayer.delegate = self
+
     }
 
     func startSession()
@@ -49,9 +47,9 @@ class AudioPlayer: NSObject
 
     private func prepareAudio(index: Int)
     {
-        if let list = audioList {
-            if index >= 0 && index < list.count {
-                if let url = list[index].path {
+        if let songs = songsList {
+            if index >= 0 && index < songs.count {
+                if let url = songs[index].path {
                     prepareAudio(url)
                 }
             }
@@ -64,15 +62,16 @@ class AudioPlayer: NSObject
         currentAudioPath = file;
 
         audioPlayer = AVAudioPlayer(contentsOfURL: currentAudioPath, error: nil)
-        audioLength = audioPlayer!.duration
+        audioPlayer!.delegate = self
         audioPlayer!.prepareToPlay()
+        audioLength = audioPlayer!.duration
     }
 
 // MARK: Commands
 
     func playAudio()
     {
-        if audioList == nil || audioList!.count == 0 {
+        if songsList == nil || songsList!.count == 0 {
             return
         }
 
@@ -84,8 +83,9 @@ class AudioPlayer: NSObject
         saveCurrentTrackNumber()
     }
 
-    func playAudio(index: Int)
+    func playAudio(index: Int, songsList: [AudioFile])
     {
+        self.songsList = songsList
         prepareAudio(index)
         playAudio()
     }
@@ -103,6 +103,9 @@ class AudioPlayer: NSObject
             return
         }
 
+        // ?
+        self.songsList = nil;
+
         audioPlayer!.stop();
         if let event = playerDidStop {
             event()
@@ -114,9 +117,9 @@ class AudioPlayer: NSObject
 
     func playNextAudio()
     {
-        if let list = audioList {
+        if let songs = songsList {
             currentAudioIndex++
-            if currentAudioIndex > list.count - 1{
+            if currentAudioIndex > songs.count - 1{
                 currentAudioIndex--
                 return
             }
@@ -132,7 +135,7 @@ class AudioPlayer: NSObject
 
     func playPreviousAudio()
     {
-        if let list = audioList {
+        if let songs = songsList {
             currentAudioIndex--
             if currentAudioIndex < 0{
                 currentAudioIndex++
@@ -150,13 +153,15 @@ class AudioPlayer: NSObject
 
 // MARK: Config
 
-    func saveCurrentTrackNumber() {
+    func saveCurrentTrackNumber()
+    {
         NSUserDefaults.standardUserDefaults().setObject(currentAudioIndex, forKey:"currentAudioIndex")
         NSUserDefaults.standardUserDefaults().synchronize()
     }
 
-    func retrieveSavedTrackNumber() {
-        if let index = NSUserDefaults.standardUserDefaults().objectForKey("currentAudioIndex") as? Int{
+    func retrieveSavedTrackNumber()
+    {
+        if let index = NSUserDefaults.standardUserDefaults().objectForKey("currentAudioIndex") as? Int {
             currentAudioIndex = index
         }else{
             currentAudioIndex = 0
@@ -168,7 +173,9 @@ class AudioPlayer: NSObject
 
 extension AudioPlayer: AudioPlayerProtocol
 {
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool) {
+    func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool)
+    {
+        // ToDo: Next song
 
     }
 }

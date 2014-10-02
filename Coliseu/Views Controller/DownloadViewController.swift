@@ -10,7 +10,7 @@ import UIKit
 
 class DownloadViewController: UIViewController
 {
-    let appCtrl: AppController
+    unowned let appCtrl: AppController
     private let cellIdentifier = "Cell"
 
     @IBOutlet weak var tableView: UITableView!
@@ -51,6 +51,12 @@ class DownloadViewController: UIViewController
         appCtrl.data.remoteServer.getNotifications(appCtrl.data.deviceToken!) { (response) -> () in
             self.tableView.reloadData()
         }
+    }
+
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+
     }
 }
 

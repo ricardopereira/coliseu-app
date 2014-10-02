@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		D7008A0E19DCCCDE00D6FE74 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7008A0B19DCCB2500D6FE74 /* Alamofire.framework */; };
 		D7008A0F19DCCCE200D6FE74 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D7008A0B19DCCB2500D6FE74 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D71511C719DD92F700A6B992 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71511C619DD92F700A6B992 /* NotificationsController.swift */; };
+		D71511C919DD962C00A6B992 /* UIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71511C819DD962C00A6B992 /* UIBaseViewController.swift */; };
+		D71511CB19DD98D500A6B992 /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71511CA19DD98D500A6B992 /* StorageController.swift */; };
 		D741097819D3003800781E10 /* FilesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D741097A19D3003800781E10 /* FilesViewCell.xib */; };
 		D741098519D301EB00781E10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D741098719D301EB00781E10 /* Localizable.strings */; };
 		D75985C419D0F7A500F68BDF /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75985C319D0F7A500F68BDF /* AppData.swift */; };
@@ -72,6 +75,9 @@
 
 /* Begin PBXFileReference section */
 		D7008A0519DCCB2400D6FE74 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Components/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		D71511C619DD92F700A6B992 /* NotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
+		D71511C819DD962C00A6B992 /* UIBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBaseViewController.swift; sourceTree = "<group>"; };
+		D71511CA19DD98D500A6B992 /* StorageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
 		D741097719D2FFA300781E10 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Launch.strings"; sourceTree = "<group>"; };
 		D741097919D3003800781E10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FilesViewCell.xib; sourceTree = "<group>"; };
 		D741097C19D3004C00781E10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FilesViewCell.strings; sourceTree = "<group>"; };
@@ -211,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				D780CDE619DD5FFF00925FBC /* ServerController.swift */,
+				D71511CA19DD98D500A6B992 /* StorageController.swift */,
 				D780CDD119DCD2E800925FBC /* AudioFile.swift */,
 				D780CDD219DCD2E800925FBC /* AudioPlayer.swift */,
 			);
@@ -220,6 +227,7 @@
 		D780CDD319DCD2E800925FBC /* Views Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D71511C819DD962C00A6B992 /* UIBaseViewController.swift */,
 				D780CDD819DCD2E800925FBC /* PlayerViewController.swift */,
 				D780CDD419DCD2E800925FBC /* DownloadViewCell.swift */,
 				D780CDD519DCD2E800925FBC /* DownloadViewController.swift */,
@@ -232,6 +240,7 @@
 		D780CDD919DCD2E800925FBC /* Views Model */ = {
 			isa = PBXGroup;
 			children = (
+				D71511C619DD92F700A6B992 /* NotificationsController.swift */,
 			);
 			path = "Views Model";
 			sourceTree = "<group>";
@@ -370,8 +379,10 @@
 				D77213B919D03F78006FCD62 /* AppDelegate.swift in Sources */,
 				D780CDE119DCD2E800925FBC /* PlayerViewController.swift in Sources */,
 				D7F2529B19D4A487008F7135 /* AppProtocols.swift in Sources */,
+				D71511C919DD962C00A6B992 /* UIBaseViewController.swift in Sources */,
 				D75985C419D0F7A500F68BDF /* AppData.swift in Sources */,
 				D7A3F59719D4B40E00EFB907 /* AppController.swift in Sources */,
+				D71511C719DD92F700A6B992 /* NotificationsController.swift in Sources */,
 				D780CDDF19DCD2E800925FBC /* FilesViewCell.swift in Sources */,
 				D780CDDB19DCD2E800925FBC /* AudioFile.swift in Sources */,
 				D780CDDC19DCD2E800925FBC /* AudioPlayer.swift in Sources */,
@@ -379,6 +390,7 @@
 				D780CDDE19DCD2E800925FBC /* DownloadViewController.swift in Sources */,
 				D780CDE019DCD2E800925FBC /* FilesViewController.swift in Sources */,
 				D780CDDD19DCD2E800925FBC /* DownloadViewCell.swift in Sources */,
+				D71511CB19DD98D500A6B992 /* StorageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
