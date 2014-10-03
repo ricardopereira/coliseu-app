@@ -10,7 +10,7 @@ import UIKit
 
 class SongsViewController: UIBaseViewController
 {
-    private let cellIdentifier = "Cell"
+    private let cellSongIdentifier = "CellSong"
     // Files list
     private var files: [AudioFile]!
 
@@ -21,10 +21,8 @@ class SongsViewController: UIBaseViewController
         super.viewDidLoad()
 
         // Register cell
-        let cellNib = UINib(nibName: "FilesViewCell", bundle: nil)
-        tableView.registerNib(cellNib!, forCellReuseIdentifier: cellIdentifier)
-        // Without Nib
-        //tableView.registerClass(FilesViewCell.self, forCellReuseIdentifier: cellIdentifier)
+        let cellNib = UINib(nibName: "SongViewCell", bundle: nil)
+        tableView.registerNib(cellNib!, forCellReuseIdentifier: cellSongIdentifier)
 
         // Set delegate and datasource
         tableView.delegate = self
@@ -69,7 +67,6 @@ class SongsViewController: UIBaseViewController
         super.viewDidDisappear(animated)
         // At this instance theres no Navigation bar!
     }
-
 }
 
 // MARK: - TableViewProtocol
@@ -91,7 +88,7 @@ extension SongsViewController: TableViewProtocol
         var cellRow = UITableViewCell()
 
         if let filesList = files {
-            if let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as FilesViewCell? {
+            if let cell = tableView.dequeueReusableCellWithIdentifier(cellSongIdentifier) as SongViewCell? {
                 let audioFile = filesList[indexPath.row]
                 cellRow = cell.configure(audioFile.title, audioFile.fileName)
             }

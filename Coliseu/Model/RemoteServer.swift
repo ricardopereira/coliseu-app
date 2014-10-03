@@ -1,5 +1,5 @@
 //
-//  ServerController.swift
+//  RemoteServer.swift
 //  Coliseu
 //
 //  Created by Ricardo Pereira on 25/09/2014.
@@ -11,7 +11,7 @@ import Alamofire
 let api = "http://99.ip-5-196-8.eu:9000/api/"
 let dir = "YouTube";
 
-class ServerController
+class RemoteServer: NotificationServerProtocol
 {
     var filesToDownload: [AudioFile] = []
 

@@ -1,5 +1,5 @@
 //
-//  FilesViewCell.swift
+//  SongViewCell.swift
 //  Coliseu
 //
 //  Created by Ricardo Pereira on 24/09/2014.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilesViewCell: UITableViewCell
+class SongViewCell: UITableViewCell
 {
     // Fields
     @IBOutlet weak var labelTitle: UILabel!

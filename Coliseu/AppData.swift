@@ -10,13 +10,10 @@ class AppData
 {
     var deviceToken: String?
 
-    let remoteServer = ServerController()
+    // Remote server
+    let remoteServer = RemoteServer()
+    // Storage: Local, DropBox, ...
     private let storage = StorageController()
-
-    // Notifications
-    var filesReady: [AudioFile] {
-        get { return remoteServer.filesToDownload }
-    }
 
     init()
     {

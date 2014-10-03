@@ -17,7 +17,6 @@ class AudioFile
     var length: Float = 0.0
     var duration: NSTimeInterval = 0
     var path: NSURL?
-    var progress: Float = 0
     var index: Int = 0
 
     required init(_ title: String, _ fileName: String)
