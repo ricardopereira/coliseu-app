@@ -22,8 +22,13 @@ class ServerController
 
     func submit(url: String, _ deviceToken: String)
     {
+        if !feature_YouTube {
+            return
+        }
+
         let url = api + "submit?url=" + url + "&token=" + deviceToken
 
+        // Submit a new download (audio file)
         Alamofire.request(.GET, url).responseString { (req: NSURLRequest, res: NSHTTPURLResponse?, str: String?, err: NSError?) -> Void in
             // Is alive
             println(str!);
@@ -32,8 +37,13 @@ class ServerController
 
     func download(fileName: String, _ deviceToken: String, progressEvent: (totalBytesRead: Int64, totalBytesExpectedToRead: Int64) -> (), completionRequest: (error: NSError?) -> ())
     {
+        if !feature_YouTube {
+            return
+        }
+
         let url = api + "load?file=" + fileName + "&token=" + deviceToken
 
+        // Download a audio file
         Alamofire.download(.GET, url, { (temporaryURL, response) in //Destination
             if let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory,inDomains: .UserDomainMask)[0] as? NSURL
             {
@@ -43,10 +53,11 @@ class ServerController
             return temporaryURL
         })
         .progress { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
-            //println(totalBytesRead)
+            // Show the progress of download
             progressEvent(totalBytesRead: totalBytesRead, totalBytesExpectedToRead: totalBytesExpectedToRead)
         }
         .response { (request, response, _, error) in
+            // Download is finished
             println(response)
             completionRequest(error: error)
         }
@@ -54,11 +65,14 @@ class ServerController
 
     func getNotifications(deviceToken: String, completionRequest: (response: AnyObject?) -> ())
     {
+        // Read notifications from server
+        // WARNING: server must be scalable!
         Alamofire.request(.GET, api+"ready", parameters: ["token": deviceToken])
         .responseJSON { (_, _, JSON, _) in
             if let data = JSON as? NSArray
             {
                 self.filesToDownload.removeAll(keepCapacity: false)
+
                 if data.count > 0
                 {
                     for item in data {

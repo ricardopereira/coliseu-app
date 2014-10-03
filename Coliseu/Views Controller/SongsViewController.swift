@@ -1,5 +1,5 @@
 //
-//  FileViewController.swift
+//  SongsViewController.swift
 //  Coliseu
 //
 //  Created by Ricardo Pereira on 23/09/2014.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FilesViewController: UIBaseViewController
+class SongsViewController: UIBaseViewController
 {
     private let cellIdentifier = "Cell"
     // Files list
@@ -74,7 +74,7 @@ class FilesViewController: UIBaseViewController
 
 // MARK: - TableViewProtocol
 
-extension FilesViewController: TableViewProtocol
+extension SongsViewController: TableViewProtocol
 {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {

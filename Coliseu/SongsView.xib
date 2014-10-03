@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilesViewController" customModule="Coliseu" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SongsViewController" customModule="Coliseu" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="BPf-MA-Tay" id="cFO-WY-Y53"/>
                 <outlet property="view" destination="iN0-l3-epB" id="HJl-Pg-5aV"/>

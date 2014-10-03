@@ -1,5 +1,5 @@
 //
-//  DownloadViewController.swift
+//  NotificationsViewController.swift
 //  Coliseu
 //
 //  Created by Ricardo Pereira on 25/09/2014.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DownloadViewController: UIViewController
+class NotificationsViewController: UIViewController
 {
     unowned let appCtrl: AppController
     private let cellIdentifier = "Cell"
@@ -60,7 +60,7 @@ class DownloadViewController: UIViewController
     }
 }
 
-extension DownloadViewController: TableViewProtocol
+extension NotificationsViewController: TableViewProtocol
 {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {

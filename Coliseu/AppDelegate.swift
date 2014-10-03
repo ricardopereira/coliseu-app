@@ -93,26 +93,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initViews() -> UITabBarController
     {
         let tabBarController = UITabBarController()
+        var tabBarViews: [AnyObject] = []
 
         // Player
         let playerView = PlayerViewController(nibName: "PlayerView", appCtrl: appCtrl)
+        tabBarViews.append(playerView)
         playerView.title = "Player"
 
         // Songs
-        let filesView = FilesViewController(nibName: "FilesView", appCtrl: appCtrl)
+        let filesView = SongsViewController(nibName: "SongsView", appCtrl: appCtrl)
+        tabBarViews.append(filesView)
         filesView.title = "Songs"
 
         // Notifications
-        let notificationsView = DownloadViewController(nibName: "DownloadView", appCtrl: appCtrl)
+        let notificationsView = NotificationsViewController(nibName: "NotificationsView", appCtrl: appCtrl)
+        tabBarViews.append(notificationsView)
         notificationsView.title = "Notifications"
 
         // Settings
-        let settingsView = UIViewController()
-        settingsView.title = "Settings"
-        settingsView.view = UIView()
-        settingsView.view.backgroundColor = UIColor.grayColor()
+        if feature_Settings {
+            let settingsView = UIViewController()
+            tabBarViews.append(settingsView)
+            settingsView.title = "Settings"
+            settingsView.view = UIView()
+            settingsView.view.backgroundColor = UIColor.grayColor()
+        }
 
-        tabBarController.setViewControllers([playerView, filesView, notificationsView, settingsView], animated: false)
+        tabBarController.setViewControllers(tabBarViews, animated: false)
         return tabBarController
     }
 }

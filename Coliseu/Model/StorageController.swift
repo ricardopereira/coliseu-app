@@ -42,11 +42,15 @@ class StorageController
     {
         var result: Bool = false
 
+        // App directory
         if let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory,inDomains: .UserDomainMask)[0] as? NSURL {
+            // Error instance
             var error = NSErrorPointer()
 
+            // Get the list of files
             let filesFromFolder = NSFileManager.defaultManager().contentsOfDirectoryAtURL(directoryURL, includingPropertiesForKeys: nil, options: NSDirectoryEnumerationOptions.SkipsHiddenFiles, error: error)
 
+            // Save on mem the list of files
             for file in filesFromFolder! {
                 result = fileHandler(fileUrl: file as NSURL)
             }

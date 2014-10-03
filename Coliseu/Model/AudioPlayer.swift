@@ -129,9 +129,6 @@ class AudioPlayer: NSObject
             return
         }
 
-        // ?
-        self.songsList = nil;
-
         audioPlayer!.stop();
         if let event = playerDidStop {
             event()
@@ -141,7 +138,7 @@ class AudioPlayer: NSObject
         }
     }
 
-    func playNextSong()
+    func playNextSong(stopIfInvalid: Bool = false)
     {
         if let songs = songsList {
             if let song = currentSong {
@@ -151,14 +148,13 @@ class AudioPlayer: NSObject
                 index++
 
                 if index > songs.count - 1 {
+                    if stopIfInvalid {
+                        stopSong()
+                    }
                     return
                 }
 
-                if audioPlayer!.playing {
-                    playSong(index)
-                } else {
-                    prepareAudio(index)
-                }
+                playSong(index)
             }
         }
     }
@@ -176,14 +172,14 @@ class AudioPlayer: NSObject
                     return
                 }
 
-                if audioPlayer!.playing {
-                    playSong(index)
-                } else {
-                    prepareAudio(index)
-                }
+                playSong(index)
             }
         }
     }
+
+    // isLastSong
+
+    // isFirstSong
 }
 
 // MARK: AudioPlayerProtocol
@@ -195,6 +191,6 @@ extension AudioPlayer: AudioPlayerProtocol
         if !flag {
             return
         }
-        playNextSong()
+        playNextSong(stopIfInvalid: true)
     }
 }

@@ -23,14 +23,15 @@
 		D780CDDB19DCD2E800925FBC /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD119DCD2E800925FBC /* AudioFile.swift */; };
 		D780CDDC19DCD2E800925FBC /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD219DCD2E800925FBC /* AudioPlayer.swift */; };
 		D780CDDD19DCD2E800925FBC /* DownloadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD419DCD2E800925FBC /* DownloadViewCell.swift */; };
-		D780CDDE19DCD2E800925FBC /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD519DCD2E800925FBC /* DownloadViewController.swift */; };
+		D780CDDE19DCD2E800925FBC /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD519DCD2E800925FBC /* NotificationsViewController.swift */; };
 		D780CDDF19DCD2E800925FBC /* FilesViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD619DCD2E800925FBC /* FilesViewCell.swift */; };
-		D780CDE019DCD2E800925FBC /* FilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD719DCD2E800925FBC /* FilesViewController.swift */; };
+		D780CDE019DCD2E800925FBC /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD719DCD2E800925FBC /* SongsViewController.swift */; };
 		D780CDE119DCD2E800925FBC /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD819DCD2E800925FBC /* PlayerViewController.swift */; };
 		D780CDE719DD5FFF00925FBC /* ServerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDE619DD5FFF00925FBC /* ServerController.swift */; };
-		D787FF5119D1C6CD00EFFF78 /* FilesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D787FF5019D1C6CD00EFFF78 /* FilesView.xib */; };
+		D787FF5119D1C6CD00EFFF78 /* SongsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D787FF5019D1C6CD00EFFF78 /* SongsView.xib */; };
+		D78E74D319DED3BB00FFA874 /* AppFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E74D219DED3BB00FFA874 /* AppFeatures.swift */; };
 		D7A3F59719D4B40E00EFB907 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A3F59619D4B40E00EFB907 /* AppController.swift */; };
-		D7F2529119D4A2E5008F7135 /* DownloadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F2529019D4A2E5008F7135 /* DownloadView.xib */; };
+		D7F2529119D4A2E5008F7135 /* NotificationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F2529019D4A2E5008F7135 /* NotificationsView.xib */; };
 		D7F2529519D4A2F6008F7135 /* DownloadViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F2529419D4A2F6008F7135 /* DownloadViewCell.xib */; };
 		D7F2529B19D4A487008F7135 /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2529A19D4A487008F7135 /* AppProtocols.swift */; };
 /* End PBXBuildFile section */
@@ -98,14 +99,15 @@
 		D780CDD119DCD2E800925FBC /* AudioFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioFile.swift; sourceTree = "<group>"; };
 		D780CDD219DCD2E800925FBC /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		D780CDD419DCD2E800925FBC /* DownloadViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadViewCell.swift; sourceTree = "<group>"; };
-		D780CDD519DCD2E800925FBC /* DownloadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
+		D780CDD519DCD2E800925FBC /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		D780CDD619DCD2E800925FBC /* FilesViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewCell.swift; sourceTree = "<group>"; };
-		D780CDD719DCD2E800925FBC /* FilesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilesViewController.swift; sourceTree = "<group>"; };
+		D780CDD719DCD2E800925FBC /* SongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsViewController.swift; sourceTree = "<group>"; };
 		D780CDD819DCD2E800925FBC /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		D780CDE619DD5FFF00925FBC /* ServerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerController.swift; sourceTree = "<group>"; };
-		D787FF5019D1C6CD00EFFF78 /* FilesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilesView.xib; sourceTree = "<group>"; };
+		D787FF5019D1C6CD00EFFF78 /* SongsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongsView.xib; sourceTree = "<group>"; };
+		D78E74D219DED3BB00FFA874 /* AppFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFeatures.swift; sourceTree = "<group>"; };
 		D7A3F59619D4B40E00EFB907 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
-		D7F2529019D4A2E5008F7135 /* DownloadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadView.xib; sourceTree = "<group>"; };
+		D7F2529019D4A2E5008F7135 /* NotificationsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsView.xib; sourceTree = "<group>"; };
 		D7F2529419D4A2F6008F7135 /* DownloadViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadViewCell.xib; sourceTree = "<group>"; };
 		D7F2529A19D4A487008F7135 /* AppProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,11 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				D77213BC19D03F78006FCD62 /* Launch.storyboard */,
+				D78E74D119DED1B100FFA874 /* Views Cell */,
 				D73C588519DEACB300AF3A7B /* PlayerView.xib */,
-				D787FF5019D1C6CD00EFFF78 /* FilesView.xib */,
-				D741097A19D3003800781E10 /* FilesViewCell.xib */,
-				D7F2529019D4A2E5008F7135 /* DownloadView.xib */,
-				D7F2529419D4A2F6008F7135 /* DownloadViewCell.xib */,
+				D787FF5019D1C6CD00EFFF78 /* SongsView.xib */,
+				D7F2529019D4A2E5008F7135 /* NotificationsView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -174,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				D77213B819D03F78006FCD62 /* AppDelegate.swift */,
+				D78E74D219DED3BB00FFA874 /* AppFeatures.swift */,
 				D7F2529A19D4A487008F7135 /* AppProtocols.swift */,
 				D7A3F59619D4B40E00EFB907 /* AppController.swift */,
 				D75985C319D0F7A500F68BDF /* AppData.swift */,
@@ -228,11 +230,10 @@
 			isa = PBXGroup;
 			children = (
 				D71511C819DD962C00A6B992 /* UIBaseViewController.swift */,
+				D78E74D019DED16E00FFA874 /* Views Cell */,
 				D780CDD819DCD2E800925FBC /* PlayerViewController.swift */,
-				D780CDD419DCD2E800925FBC /* DownloadViewCell.swift */,
-				D780CDD519DCD2E800925FBC /* DownloadViewController.swift */,
-				D780CDD619DCD2E800925FBC /* FilesViewCell.swift */,
-				D780CDD719DCD2E800925FBC /* FilesViewController.swift */,
+				D780CDD719DCD2E800925FBC /* SongsViewController.swift */,
+				D780CDD519DCD2E800925FBC /* NotificationsViewController.swift */,
 			);
 			path = "Views Controller";
 			sourceTree = "<group>";
@@ -243,6 +244,24 @@
 				D71511C619DD92F700A6B992 /* NotificationsController.swift */,
 			);
 			path = "Views Model";
+			sourceTree = "<group>";
+		};
+		D78E74D019DED16E00FFA874 /* Views Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D780CDD619DCD2E800925FBC /* FilesViewCell.swift */,
+				D780CDD419DCD2E800925FBC /* DownloadViewCell.swift */,
+			);
+			name = "Views Cell";
+			sourceTree = "<group>";
+		};
+		D78E74D119DED1B100FFA874 /* Views Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D741097A19D3003800781E10 /* FilesViewCell.xib */,
+				D7F2529419D4A2F6008F7135 /* DownloadViewCell.xib */,
+			);
+			name = "Views Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,8 +371,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7F2529519D4A2F6008F7135 /* DownloadViewCell.xib in Resources */,
-				D787FF5119D1C6CD00EFFF78 /* FilesView.xib in Resources */,
-				D7F2529119D4A2E5008F7135 /* DownloadView.xib in Resources */,
+				D787FF5119D1C6CD00EFFF78 /* SongsView.xib in Resources */,
+				D7F2529119D4A2E5008F7135 /* NotificationsView.xib in Resources */,
 				D741098519D301EB00781E10 /* Localizable.strings in Resources */,
 				D741097819D3003800781E10 /* FilesViewCell.xib in Resources */,
 				D77213BE19D03F78006FCD62 /* Launch.storyboard in Resources */,
@@ -387,8 +406,9 @@
 				D780CDDB19DCD2E800925FBC /* AudioFile.swift in Sources */,
 				D780CDDC19DCD2E800925FBC /* AudioPlayer.swift in Sources */,
 				D780CDE719DD5FFF00925FBC /* ServerController.swift in Sources */,
-				D780CDDE19DCD2E800925FBC /* DownloadViewController.swift in Sources */,
-				D780CDE019DCD2E800925FBC /* FilesViewController.swift in Sources */,
+				D780CDDE19DCD2E800925FBC /* NotificationsViewController.swift in Sources */,
+				D78E74D319DED3BB00FFA874 /* AppFeatures.swift in Sources */,
+				D780CDE019DCD2E800925FBC /* SongsViewController.swift in Sources */,
 				D780CDDD19DCD2E800925FBC /* DownloadViewCell.swift in Sources */,
 				D71511CB19DD98D500A6B992 /* StorageController.swift in Sources */,
 			);

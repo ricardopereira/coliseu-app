@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DownloadViewController" customModule="Coliseu" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationsViewController" customModule="Coliseu" customModuleProvider="target">
             <connections>
                 <outlet property="tableView" destination="72l-1Q-sxt" id="fSg-1M-fI8"/>
                 <outlet property="view" destination="iN0-l3-epB" id="IuH-YF-l3H"/>
