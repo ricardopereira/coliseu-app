@@ -41,6 +41,10 @@ class NotificationsViewController: UIBaseViewController
         // Dynamic cells
         tableView.estimatedRowHeight = 65
         tableView.rowHeight = UITableViewAutomaticDimension
+        // Configure
+        edgesForExtendedLayout = UIRectEdge.None
+        extendedLayoutIncludesOpaqueBars = false
+        automaticallyAdjustsScrollViewInsets = false
     }
 
     override func viewWillAppear(animated: Bool)
@@ -50,8 +54,8 @@ class NotificationsViewController: UIBaseViewController
         if let navigation = navigationController {
             navigation.navigationBarHidden = false
         }
-        // Load list from server
-        appCtrl.data.remoteServer.getNotifications(appCtrl.data.deviceToken!) { (response) -> () in
+        // Get notifications from server
+        controller.refresh(appCtrl.data.deviceToken!) { () -> () in
             self.tableView.reloadData()
         }
     }
@@ -59,8 +63,10 @@ class NotificationsViewController: UIBaseViewController
     override func viewDidAppear(animated: Bool)
     {
         super.viewDidAppear(animated)
-        // Get notifications from server
-        controller.refresh()
+        // Notification bar item
+        if let barItem = tabBarItem {
+            barItem.badgeValue = nil
+        }
     }
 }
 
@@ -76,7 +82,7 @@ extension NotificationsViewController: TableViewProtocol
         var cellRow = UITableViewCell()
 
         // Notification item
-        let notify = controller.items[indexPath.row]
+        let notify: AnyObject = controller.items[indexPath.row]
 
         // Check notification type
         if notify is NotificationDownload {
@@ -96,7 +102,7 @@ extension NotificationsViewController: TableViewProtocol
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        let notify = controller.items[indexPath.row]
+        let notify: AnyObject = controller.items[indexPath.row]
 
         if notify is NotificationDownload {
             if let download = notify as? NotificationDownload

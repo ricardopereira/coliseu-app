@@ -31,6 +31,10 @@ class SongsViewController: UIBaseViewController
         // Configure
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+
+        // Teste
+        let buttonSubmit = UIBarButtonItem(title: "YouTube", style: UIBarButtonItemStyle.Plain, target: self, action: Selector("didPressSubmit:"))
+        navigationItem.rightBarButtonItem = buttonSubmit
     }
 
     override func viewWillAppear(animated: Bool)
@@ -66,6 +70,40 @@ class SongsViewController: UIBaseViewController
     {
         super.viewDidDisappear(animated)
         // At this instance theres no Navigation bar!
+    }
+
+    func didPressSubmit(sender: AnyObject?)
+    {
+        let alertController = UIAlertController(title: "YouTube to MP3", message: "place the video url:", preferredStyle: .Alert)
+
+        let submitAction = UIAlertAction(title: "Submit", style: .Default) { [unowned self] (_) in
+            // Did press
+            let urlTextField = alertController.textFields![0] as UITextField
+
+            if feature_YouTube {
+                if let token = self.appCtrl.data.deviceToken {
+                    self.appCtrl.data.remoteServer.submit(urlTextField.text, token)
+                }
+            }
+        }
+        submitAction.enabled = false
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
+
+        alertController.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "url"
+
+            NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue()) { (notification) in
+                submitAction.enabled = textField.text != ""
+            }
+        }
+        
+        alertController.addAction(submitAction)
+        alertController.addAction(cancelAction)
+
+        self.presentViewController(alertController, animated: true) {
+            // Completion
+        }
     }
 }
 

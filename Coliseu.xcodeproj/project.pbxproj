@@ -27,15 +27,15 @@
 		D780CDE019DCD2E800925FBC /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD719DCD2E800925FBC /* SongsViewController.swift */; };
 		D780CDE119DCD2E800925FBC /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD819DCD2E800925FBC /* PlayerViewController.swift */; };
 		D780CDE719DD5FFF00925FBC /* RemoteServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDE619DD5FFF00925FBC /* RemoteServer.swift */; };
-		D787FF5119D1C6CD00EFFF78 /* SongsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D787FF5019D1C6CD00EFFF78 /* SongsView.xib */; };
 		D78E74D319DED3BB00FFA874 /* AppFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E74D219DED3BB00FFA874 /* AppFeatures.swift */; };
 		D78E74D519DEDDBC00FFA874 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E74D419DEDDBC00FFA874 /* Notification.swift */; };
 		D78E74D719DEE1B400FFA874 /* NotificationDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E74D619DEE1B400FFA874 /* NotificationDownload.swift */; };
 		D78E74D919DEE45A00FFA874 /* NotificationServerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E74D819DEE45A00FFA874 /* NotificationServerProtocol.swift */; };
 		D78E74DB19DEEA6E00FFA874 /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E74DA19DEEA6E00FFA874 /* StorageController.swift */; };
+		D78E74E119DEFA2F00FFA874 /* DownloadViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78E74DE19DEFA2F00FFA874 /* DownloadViewCell.xib */; };
+		D78E74E219DEFA2F00FFA874 /* NotificationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78E74DF19DEFA2F00FFA874 /* NotificationsView.xib */; };
+		D78E74E319DEFA2F00FFA874 /* SongsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78E74E019DEFA2F00FFA874 /* SongsView.xib */; };
 		D7A3F59719D4B40E00EFB907 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A3F59619D4B40E00EFB907 /* AppController.swift */; };
-		D7F2529119D4A2E5008F7135 /* NotificationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F2529019D4A2E5008F7135 /* NotificationsView.xib */; };
-		D7F2529519D4A2F6008F7135 /* DownloadViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F2529419D4A2F6008F7135 /* DownloadViewCell.xib */; };
 		D7F2529B19D4A487008F7135 /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2529A19D4A487008F7135 /* AppProtocols.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,15 +106,15 @@
 		D780CDD719DCD2E800925FBC /* SongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsViewController.swift; sourceTree = "<group>"; };
 		D780CDD819DCD2E800925FBC /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		D780CDE619DD5FFF00925FBC /* RemoteServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteServer.swift; sourceTree = "<group>"; };
-		D787FF5019D1C6CD00EFFF78 /* SongsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SongsView.xib; sourceTree = "<group>"; };
 		D78E74D219DED3BB00FFA874 /* AppFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFeatures.swift; sourceTree = "<group>"; };
 		D78E74D419DEDDBC00FFA874 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		D78E74D619DEE1B400FFA874 /* NotificationDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDownload.swift; sourceTree = "<group>"; };
 		D78E74D819DEE45A00FFA874 /* NotificationServerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationServerProtocol.swift; sourceTree = "<group>"; };
 		D78E74DA19DEEA6E00FFA874 /* StorageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
+		D78E74DE19DEFA2F00FFA874 /* DownloadViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DownloadViewCell.xib; path = Views/DownloadViewCell.xib; sourceTree = "<group>"; };
+		D78E74DF19DEFA2F00FFA874 /* NotificationsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationsView.xib; path = Views/NotificationsView.xib; sourceTree = "<group>"; };
+		D78E74E019DEFA2F00FFA874 /* SongsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SongsView.xib; path = Views/SongsView.xib; sourceTree = "<group>"; };
 		D7A3F59619D4B40E00EFB907 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
-		D7F2529019D4A2E5008F7135 /* NotificationsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsView.xib; sourceTree = "<group>"; };
-		D7F2529419D4A2F6008F7135 /* DownloadViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DownloadViewCell.xib; sourceTree = "<group>"; };
 		D7F2529A19D4A487008F7135 /* AppProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,8 +152,8 @@
 				D77213BC19D03F78006FCD62 /* Launch.storyboard */,
 				D78E74D119DED1B100FFA874 /* Views Cell */,
 				D73C588519DEACB300AF3A7B /* PlayerView.xib */,
-				D787FF5019D1C6CD00EFFF78 /* SongsView.xib */,
-				D7F2529019D4A2E5008F7135 /* NotificationsView.xib */,
+				D78E74E019DEFA2F00FFA874 /* SongsView.xib */,
+				D78E74DF19DEFA2F00FFA874 /* NotificationsView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -268,7 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				D741097A19D3003800781E10 /* SongViewCell.xib */,
-				D7F2529419D4A2F6008F7135 /* DownloadViewCell.xib */,
+				D78E74DE19DEFA2F00FFA874 /* DownloadViewCell.xib */,
 			);
 			name = "Views Cell";
 			sourceTree = "<group>";
@@ -379,13 +379,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7F2529519D4A2F6008F7135 /* DownloadViewCell.xib in Resources */,
-				D787FF5119D1C6CD00EFFF78 /* SongsView.xib in Resources */,
-				D7F2529119D4A2E5008F7135 /* NotificationsView.xib in Resources */,
 				D741098519D301EB00781E10 /* Localizable.strings in Resources */,
 				D741097819D3003800781E10 /* SongViewCell.xib in Resources */,
+				D78E74E119DEFA2F00FFA874 /* DownloadViewCell.xib in Resources */,
+				D78E74E319DEFA2F00FFA874 /* SongsView.xib in Resources */,
 				D77213BE19D03F78006FCD62 /* Launch.storyboard in Resources */,
 				D77213C019D03F78006FCD62 /* Images.xcassets in Resources */,
+				D78E74E219DEFA2F00FFA874 /* NotificationsView.xib in Resources */,
 				D73C588619DEACB300AF3A7B /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

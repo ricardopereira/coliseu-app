@@ -82,6 +82,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         case UIApplicationState.Active:
             // Application is running in foreground
             NSLog("Foreground notification")
+            // Notification bar item
+            if let barItem = appCtrl.notificationBarItem {
+                barItem.badgeValue = "*"
+            }
         case UIApplicationState.Background, UIApplicationState.Inactive:
             // Application is brought from background or launched after terminated
             handleNotification(UIApplicationState.Active,title,fileName)
@@ -101,13 +105,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         playerView.title = "Player"
 
         // Songs
-        let filesView = SongsViewController(nibName: "SongsView", appCtrl: appCtrl)
-        tabBarViews.append(filesView)
-        filesView.title = "Songs"
+        let songsNavigationController = UINavigationController()
+        let songsView = SongsViewController(nibName: "SongsView", appCtrl: appCtrl)
+        songsView.title = "Songs"
+        songsNavigationController.pushViewController(songsView, animated: false)
+        tabBarViews.append(songsNavigationController)
 
         // Notifications
         let notificationsView = NotificationsViewController(nibName: "NotificationsView", appCtrl: appCtrl)
         tabBarViews.append(notificationsView)
+        appCtrl.notificationBarItem = notificationsView.tabBarItem
         notificationsView.title = "Notifications"
 
         // Settings

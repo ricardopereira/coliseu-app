@@ -16,10 +16,16 @@ class UIBaseViewController: UIViewController
     {
         self.appCtrl = appCtrl
         super.init(nibName: nibNameOrNil, bundle: nil)
+        created()
     }
 
     required init(coder aDecoder: NSCoder)
     {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func created()
+    {
+
     }
 }

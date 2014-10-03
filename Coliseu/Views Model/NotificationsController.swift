@@ -8,11 +8,15 @@
 
 class NotificationsController
 {
-    private var notifications: [Notification] = []
+    private var notifications: [AnyObject]?
     private let server: NotificationServerProtocol
 
-    var items: [Notification] {
-        return notifications
+    var items: [AnyObject] {
+        if notifications == nil {
+            // Zero notifications
+            notifications = [Notification]()
+        }
+        return notifications!
     }
 
     init(_ server: NotificationServerProtocol)
@@ -20,9 +24,13 @@ class NotificationsController
         self.server = server
     }
 
-    func refresh()
+    func refresh(deviceToken: String, completion: () -> ())
     {
-
+        // Load list from server
+        server.getNotifications(deviceToken) { (list) -> () in
+            self.notifications = list
+            completion()
+        }
     }
 
     func requestDownload(item: NotificationDownload)

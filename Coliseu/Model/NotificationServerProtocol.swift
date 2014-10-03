@@ -8,5 +8,5 @@
 
 protocol NotificationServerProtocol
 {
-    func getNotifications(deviceToken: String, completionRequest: (response: AnyObject?) -> ())
+    func getNotifications(deviceToken: String, completionRequest: (items: [AnyObject]) -> ())
 }

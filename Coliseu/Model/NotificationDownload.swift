@@ -8,12 +8,12 @@
 
 class NotificationDownload: Notification
 {
-    var fileName: String = ""
+    let fileName: String
     var progress: Float = 0 //0-1
 
-    override init(_ message: String)
+    required init(_ message: String, _ fileName: String)
     {
+        self.fileName = fileName
         super.init(message)
-
     }
 }

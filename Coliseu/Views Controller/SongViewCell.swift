@@ -29,7 +29,7 @@ class SongViewCell: UITableViewCell
         labelTitle.accessibilityLabel = NSLocalizedString("Music title", comment: "")
         labelTitle.accessibilityValue = title
 
-        labelFilename.text = filename + " lksdjlkdjfg "
+        labelFilename.text = filename
         labelFilename.lineBreakMode = NSLineBreakMode.ByCharWrapping
         labelFilename.numberOfLines = 0
         return self
@@ -39,7 +39,7 @@ class SongViewCell: UITableViewCell
     {
         super.layoutSubviews()
         // ?
-        labelFilename.preferredMaxLayoutWidth = frame.width
+        labelFilename.preferredMaxLayoutWidth = frame.width - 50
     }
 
     override var bounds : CGRect {

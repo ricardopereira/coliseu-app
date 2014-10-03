@@ -13,8 +13,6 @@ let dir = "YouTube";
 
 class RemoteServer: NotificationServerProtocol
 {
-    var filesToDownload: [AudioFile] = []
-
     init()
     {
 
@@ -63,26 +61,25 @@ class RemoteServer: NotificationServerProtocol
         }
     }
 
-    func getNotifications(deviceToken: String, completionRequest: (response: AnyObject?) -> ())
+    func getNotifications(deviceToken: String, completionRequest: (items: [AnyObject]) -> ()) //AnyObject -> base Notification
     {
+        var list: [AnyObject] = []
         // Read notifications from server
         // WARNING: server must be scalable!
         Alamofire.request(.GET, api+"ready", parameters: ["token": deviceToken])
         .responseJSON { (_, _, JSON, _) in
             if let data = JSON as? NSArray
             {
-                self.filesToDownload.removeAll(keepCapacity: false)
-
                 if data.count > 0
                 {
                     for item in data {
                         let title = item["title"] as String!
                         let filename = item["filename"] as String!
 
-                        self.filesToDownload.append(AudioFile(title, filename))
+                        list.append(NotificationDownload(title, filename))
                     }
                 }
-                completionRequest(response: JSON)
+                completionRequest(items: list)
             }
         }
     }
