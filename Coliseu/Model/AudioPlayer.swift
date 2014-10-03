@@ -21,10 +21,7 @@ class AudioPlayer: NSObject
     var timer: NSTimer!
 
     // Playlist
-    private var currentAudio = "";
-    private var currentAudioIndex = 0
-    private var currentAudioPath: NSURL?
-    private var audioLength = 0.0
+    private var currentSong: AudioFile?
     var songsList: [AudioFile]?
 
     // Events
@@ -49,57 +46,86 @@ class AudioPlayer: NSObject
     {
         if let songs = songsList {
             if index >= 0 && index < songs.count {
-                if let url = songs[index].path {
-                    prepareAudio(url)
-                }
+                prepareAudio(songs[index], index)
             }
         }
     }
 
-    private func prepareAudio(file: NSURL)
+    private func prepareAudio(song: AudioFile, _ index: Int)
     {
         // Keep alive audio at background
-        currentAudioPath = file;
+        if song.path == nil {
+            currentSong = nil
+            return
+        }
+        else {
+            currentSong = song
+            song.index = index
+        }
 
-        audioPlayer = AVAudioPlayer(contentsOfURL: currentAudioPath, error: nil)
+        audioPlayer = AVAudioPlayer(contentsOfURL: song.path, error: nil)
         audioPlayer!.delegate = self
         audioPlayer!.prepareToPlay()
-        audioLength = audioPlayer!.duration
+        // ?
+        song.duration = audioPlayer!.duration
+    }
+
+    func songListIsValid() -> Bool
+    {
+        if songsList == nil || songsList!.count == 0 {
+            return false
+        }
+        else {
+            return true
+        }
     }
 
 // MARK: Commands
 
-    func playAudio()
+    func playSong()
     {
-        if songsList == nil || songsList!.count == 0 {
+        // Verify if has a valid playlist to play
+        if !songListIsValid() {
             return
         }
-
+        // Check the didStart event
         if let event = playerDidStart {
             event()
         }
         audioPlayer!.play()
-        //startTimer()
-        saveCurrentTrackNumber()
     }
 
-    func playAudio(index: Int, songsList: [AudioFile])
+    func playSong(index: Int, songsList: [AudioFile])
     {
         self.songsList = songsList
+        // Prepare core audio
         prepareAudio(index)
-        playAudio()
+        // Play current song
+        playSong()
     }
 
-    func pauseAudio()
+    func playSong(index: Int)
+    {
+        // Verify if has a valid playlist to play
+        if !songListIsValid() {
+            return
+        }
+        // Prepare core audio
+        prepareAudio(index)
+        // Play current song
+        playSong()
+    }
+
+    func pauseSong()
     {
         if audioPlayer!.playing {
             audioPlayer!.pause()
         }
     }
 
-    func stopAudio()
+    func stopSong()
     {
-        if !audioPlayer!.playing {
+        if audioPlayer == nil || !audioPlayer!.playing {
             return
         }
 
@@ -110,61 +136,52 @@ class AudioPlayer: NSObject
         if let event = playerDidStop {
             event()
         }
-        if let current = currentAudioPath {
-            prepareAudio(current)
+        if let current = currentSong {
+            prepareAudio(current, current.index)
         }
     }
 
-    func playNextAudio()
+    func playNextSong()
     {
         if let songs = songsList {
-            currentAudioIndex++
-            if currentAudioIndex > songs.count - 1{
-                currentAudioIndex--
-                return
-            }
+            if let song = currentSong {
+                var index = song.index
 
-            if audioPlayer!.playing {
-                //prepareAudio()
-                playAudio()
-            } else {
-                //prepareAudio()
+                // Next song
+                index++
+
+                if index > songs.count - 1 {
+                    return
+                }
+
+                if audioPlayer!.playing {
+                    playSong(index)
+                } else {
+                    prepareAudio(index)
+                }
             }
         }
     }
 
-    func playPreviousAudio()
+    func playPreviousSong()
     {
         if let songs = songsList {
-            currentAudioIndex--
-            if currentAudioIndex < 0{
-                currentAudioIndex++
-                return
+            if let song = currentSong {
+                var index = song.index
+
+                // Previous song
+                index--
+
+                if index < 0 {
+                    return
+                }
+
+                if audioPlayer!.playing {
+                    playSong(index)
+                } else {
+                    prepareAudio(index)
+                }
             }
-
-            if audioPlayer!.playing {
-                //prepareAudio()
-                playAudio()
-            } else {
-                //prepareAudio()
-            }
-        }
-    }
-
-// MARK: Config
-
-    func saveCurrentTrackNumber()
-    {
-        NSUserDefaults.standardUserDefaults().setObject(currentAudioIndex, forKey:"currentAudioIndex")
-        NSUserDefaults.standardUserDefaults().synchronize()
-    }
-
-    func retrieveSavedTrackNumber()
-    {
-        if let index = NSUserDefaults.standardUserDefaults().objectForKey("currentAudioIndex") as? Int {
-            currentAudioIndex = index
-        }else{
-            currentAudioIndex = 0
         }
     }
 }
@@ -175,7 +192,9 @@ extension AudioPlayer: AudioPlayerProtocol
 {
     func audioPlayerDidFinishPlaying(player: AVAudioPlayer!, successfully flag: Bool)
     {
-        // ToDo: Next song
-
+        if !flag {
+            return
+        }
+        playNextSong()
     }
 }

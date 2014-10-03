@@ -29,7 +29,7 @@ class FilesViewCell: UITableViewCell
         labelTitle.accessibilityLabel = NSLocalizedString("Music title", comment: "")
         labelTitle.accessibilityValue = title
 
-        labelFilename.text = filename
+        labelFilename.text = filename + " lksdjlkdjfg "
         labelFilename.lineBreakMode = NSLineBreakMode.ByCharWrapping
         labelFilename.numberOfLines = 0
         return self
@@ -39,6 +39,13 @@ class FilesViewCell: UITableViewCell
     {
         super.layoutSubviews()
         // ?
-        //labelFilename.preferredMaxLayoutWidth = frame.width
+        labelFilename.preferredMaxLayoutWidth = frame.width
+    }
+
+    override var bounds : CGRect {
+        didSet {
+            // Fix autolayout constraints broken in Xcode 6 GM + iOS 7.1
+            //self.contentView.frame = bounds
+        }
     }
 }

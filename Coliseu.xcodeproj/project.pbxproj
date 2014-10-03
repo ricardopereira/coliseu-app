@@ -12,6 +12,7 @@
 		D71511C719DD92F700A6B992 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71511C619DD92F700A6B992 /* NotificationsController.swift */; };
 		D71511C919DD962C00A6B992 /* UIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71511C819DD962C00A6B992 /* UIBaseViewController.swift */; };
 		D71511CB19DD98D500A6B992 /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71511CA19DD98D500A6B992 /* StorageController.swift */; };
+		D73C588619DEACB300AF3A7B /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D73C588519DEACB300AF3A7B /* PlayerView.xib */; };
 		D741097819D3003800781E10 /* FilesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D741097A19D3003800781E10 /* FilesViewCell.xib */; };
 		D741098519D301EB00781E10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D741098719D301EB00781E10 /* Localizable.strings */; };
 		D75985C419D0F7A500F68BDF /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75985C319D0F7A500F68BDF /* AppData.swift */; };
@@ -19,7 +20,6 @@
 		D77213BE19D03F78006FCD62 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D77213BC19D03F78006FCD62 /* Launch.storyboard */; };
 		D77213C019D03F78006FCD62 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D77213BF19D03F78006FCD62 /* Images.xcassets */; };
 		D77213CF19D03F79006FCD62 /* ColiseuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77213CE19D03F79006FCD62 /* ColiseuTests.swift */; };
-		D77213EF19D0BCBF006FCD62 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77213EE19D0BCBF006FCD62 /* MainView.xib */; };
 		D780CDDB19DCD2E800925FBC /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD119DCD2E800925FBC /* AudioFile.swift */; };
 		D780CDDC19DCD2E800925FBC /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD219DCD2E800925FBC /* AudioPlayer.swift */; };
 		D780CDDD19DCD2E800925FBC /* DownloadViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDD419DCD2E800925FBC /* DownloadViewCell.swift */; };
@@ -78,6 +78,7 @@
 		D71511C619DD92F700A6B992 /* NotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		D71511C819DD962C00A6B992 /* UIBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBaseViewController.swift; sourceTree = "<group>"; };
 		D71511CA19DD98D500A6B992 /* StorageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
+		D73C588519DEACB300AF3A7B /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlayerView.xib; path = Views/PlayerView.xib; sourceTree = "<group>"; };
 		D741097719D2FFA300781E10 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Launch.strings"; sourceTree = "<group>"; };
 		D741097919D3003800781E10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FilesViewCell.xib; sourceTree = "<group>"; };
 		D741097C19D3004C00781E10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/FilesViewCell.strings; sourceTree = "<group>"; };
@@ -94,7 +95,6 @@
 		D77213C819D03F79006FCD62 /* ColiseuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ColiseuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D77213CD19D03F79006FCD62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D77213CE19D03F79006FCD62 /* ColiseuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColiseuTests.swift; sourceTree = "<group>"; };
-		D77213EE19D0BCBF006FCD62 /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
 		D780CDD119DCD2E800925FBC /* AudioFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioFile.swift; sourceTree = "<group>"; };
 		D780CDD219DCD2E800925FBC /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		D780CDD419DCD2E800925FBC /* DownloadViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadViewCell.swift; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				D77213BC19D03F78006FCD62 /* Launch.storyboard */,
-				D77213EE19D0BCBF006FCD62 /* MainView.xib */,
+				D73C588519DEACB300AF3A7B /* PlayerView.xib */,
 				D787FF5019D1C6CD00EFFF78 /* FilesView.xib */,
 				D741097A19D3003800781E10 /* FilesViewCell.xib */,
 				D7F2529019D4A2E5008F7135 /* DownloadView.xib */,
@@ -356,9 +356,9 @@
 				D7F2529119D4A2E5008F7135 /* DownloadView.xib in Resources */,
 				D741098519D301EB00781E10 /* Localizable.strings in Resources */,
 				D741097819D3003800781E10 /* FilesViewCell.xib in Resources */,
-				D77213EF19D0BCBF006FCD62 /* MainView.xib in Resources */,
 				D77213BE19D03F78006FCD62 /* Launch.storyboard in Resources */,
 				D77213C019D03F78006FCD62 /* Images.xcassets in Resources */,
+				D73C588619DEACB300AF3A7B /* PlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

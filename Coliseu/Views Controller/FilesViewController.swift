@@ -101,7 +101,7 @@ extension FilesViewController: TableViewProtocol
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        appCtrl.player.playAudio(indexPath.row, songsList: files)
+        appCtrl.player.playSong(indexPath.row, songsList: files)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

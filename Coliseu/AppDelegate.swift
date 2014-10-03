@@ -95,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarController = UITabBarController()
 
         // Player
-        let playerView = PlayerViewController(nibName: "MainView", appCtrl: appCtrl)
+        let playerView = PlayerViewController(nibName: "PlayerView", appCtrl: appCtrl)
         playerView.title = "Player"
 
         // Songs
