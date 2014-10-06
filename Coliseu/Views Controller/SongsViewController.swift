@@ -74,19 +74,26 @@ class SongsViewController: UIBaseViewController
 
     func didPressSubmit(sender: AnyObject?)
     {
-        let alertController = UIAlertController(title: "YouTube to MP3", message: "place the video url:", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "YouTube to MP3", message: "search with:", preferredStyle: .Alert)
 
-        let submitAction = UIAlertAction(title: "Submit", style: .Default) { [unowned self] (_) in
+        let searchAction = UIAlertAction(title: "Search", style: .Default) { [unowned self] (_) in
             // Did press
             let urlTextField = alertController.textFields![0] as UITextField
 
             if feature_YouTube {
-                if let token = self.appCtrl.data.deviceToken {
-                    self.appCtrl.data.remoteServer.submit(urlTextField.text, token)
+                // Search with YouTube API v3
+                let ytServer = YouTubeServer()
+                // Get result
+                ytServer.getVideos(urlTextField.text, apiKey: "") { (items) -> () in
+                    let videosView = VideosViewController(nibName: "VideosView", appCtrl: self.appCtrl, videos: items)
+                    // Show results
+                    if let navigation = self.navigationController {
+                        navigation.pushViewController(videosView, animated: true)
+                    }
                 }
             }
         }
-        submitAction.enabled = false
+        searchAction.enabled = false
 
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (_) in }
 
@@ -94,11 +101,11 @@ class SongsViewController: UIBaseViewController
             textField.placeholder = "url"
 
             NSNotificationCenter.defaultCenter().addObserverForName(UITextFieldTextDidChangeNotification, object: textField, queue: NSOperationQueue.mainQueue()) { (notification) in
-                submitAction.enabled = textField.text != ""
+                searchAction.enabled = textField.text != ""
             }
         }
         
-        alertController.addAction(submitAction)
+        alertController.addAction(searchAction)
         alertController.addAction(cancelAction)
 
         self.presentViewController(alertController, animated: true) {

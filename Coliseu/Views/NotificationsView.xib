@@ -16,7 +16,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="72l-1Q-sxt">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="21" width="600" height="579"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="HuK-VW-JNN"/>
@@ -26,10 +26,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="72l-1Q-sxt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="8mj-1u-JNj"/>
-                <constraint firstAttribute="trailing" secondItem="72l-1Q-sxt" secondAttribute="trailing" id="h1F-id-J2o"/>
-                <constraint firstAttribute="bottom" secondItem="72l-1Q-sxt" secondAttribute="bottom" id="kIv-xq-yHa"/>
-                <constraint firstItem="72l-1Q-sxt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qZG-Cg-zSt"/>
+                <constraint firstAttribute="trailing" secondItem="72l-1Q-sxt" secondAttribute="trailing" id="2wF-a1-Sew"/>
+                <constraint firstItem="72l-1Q-sxt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="HFl-di-bJD"/>
+                <constraint firstAttribute="bottom" secondItem="72l-1Q-sxt" secondAttribute="bottom" id="Nfa-ta-aZW"/>
+                <constraint firstItem="72l-1Q-sxt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="21" id="Q7k-jI-23h"/>
             </constraints>
         </view>
     </objects>

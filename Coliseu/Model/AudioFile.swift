@@ -28,7 +28,7 @@ class AudioFile
     convenience init(url: NSURL)
     {
         let fileAsset = AVURLAsset(URL: url, options: nil)
-        var title: String = "Mp3"
+        var title: String = "Song"
 
         // ToDo
         for metadataFormat in fileAsset.availableMetadataFormats {

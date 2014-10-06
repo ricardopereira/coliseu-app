@@ -19,12 +19,17 @@ class YouTubeServer
     {
         var list: [YouTubeVideo] = []
 
-        let url = "https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&maxResults=25&q=cool+kids&type=video&fields=items(id%2FvideoId%2Csnippet%2Ftitle)&key=AIzaSyAph94YQOTuY4qqnKoSqIt2BM5MjsCFz0c"
+        // Remover espaços duplicados, caracteres especiais, verificar se tem '+', ...
+
+        let q = query.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+
+        //let q = reduce(Array(query), "", { $0! + ($1 == " " ? "+" : $1) } )
+
+        let url = "https://www.googleapis.com/youtube/v3/search?part=id%2Csnippet&maxResults=25&q=" + q + "&type=video&fields=items(id%2FvideoId%2Csnippet%2Ftitle)&key=AIzaSyAph94YQOTuY4qqnKoSqIt2BM5MjsCFz0c"
 
         Alamofire.request(.GET, url)
             .responseJSON { (_, _, JSON, _) in
-                println(JSON)
-
+                // Parsing JSON
                 if let data = JSON as? NSDictionary
                 {
                     if let items = data["items"] as? NSArray

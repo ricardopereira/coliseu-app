@@ -13,6 +13,9 @@
 		D71511C919DD962C00A6B992 /* UIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71511C819DD962C00A6B992 /* UIBaseViewController.swift */; };
 		D72CA8D119E0830D00FE5880 /* YouTubeServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72CA8D019E0830D00FE5880 /* YouTubeServer.swift */; };
 		D72CA8D519E083CC00FE5880 /* YouTubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72CA8D419E083CC00FE5880 /* YouTubeVideo.swift */; };
+		D72CA8D719E2E10500FE5880 /* VideosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72CA8D619E2E10500FE5880 /* VideosViewController.swift */; };
+		D72CA8D919E2E44900FE5880 /* VideoViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D72CA8D819E2E44900FE5880 /* VideoViewCell.xib */; };
+		D72CA8DB19E2E47300FE5880 /* VideosView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D72CA8DA19E2E47300FE5880 /* VideosView.xib */; };
 		D73C588619DEACB300AF3A7B /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D73C588519DEACB300AF3A7B /* PlayerView.xib */; };
 		D741097819D3003800781E10 /* SongViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D741097A19D3003800781E10 /* SongViewCell.xib */; };
 		D741098519D301EB00781E10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D741098719D301EB00781E10 /* Localizable.strings */; };
@@ -37,6 +40,8 @@
 		D78E74E119DEFA2F00FFA874 /* DownloadViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78E74DE19DEFA2F00FFA874 /* DownloadViewCell.xib */; };
 		D78E74E219DEFA2F00FFA874 /* NotificationsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78E74DF19DEFA2F00FFA874 /* NotificationsView.xib */; };
 		D78E74E319DEFA2F00FFA874 /* SongsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78E74E019DEFA2F00FFA874 /* SongsView.xib */; };
+		D79F823B19E2E4D3003E20F8 /* VideoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79F823A19E2E4D3003E20F8 /* VideoViewCell.swift */; };
+		D79F824019E2EB92003E20F8 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79F823F19E2EB92003E20F8 /* Crashlytics.framework */; };
 		D7A3F59719D4B40E00EFB907 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A3F59619D4B40E00EFB907 /* AppController.swift */; };
 		D7F2529B19D4A487008F7135 /* AppProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2529A19D4A487008F7135 /* AppProtocols.swift */; };
 /* End PBXBuildFile section */
@@ -85,6 +90,9 @@
 		D71511C819DD962C00A6B992 /* UIBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBaseViewController.swift; sourceTree = "<group>"; };
 		D72CA8D019E0830D00FE5880 /* YouTubeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeServer.swift; sourceTree = "<group>"; };
 		D72CA8D419E083CC00FE5880 /* YouTubeVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeVideo.swift; sourceTree = "<group>"; };
+		D72CA8D619E2E10500FE5880 /* VideosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosViewController.swift; sourceTree = "<group>"; };
+		D72CA8D819E2E44900FE5880 /* VideoViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoViewCell.xib; path = Views/VideoViewCell.xib; sourceTree = "<group>"; };
+		D72CA8DA19E2E47300FE5880 /* VideosView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideosView.xib; path = Views/VideosView.xib; sourceTree = "<group>"; };
 		D73C588519DEACB300AF3A7B /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlayerView.xib; path = Views/PlayerView.xib; sourceTree = "<group>"; };
 		D741097719D2FFA300781E10 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Launch.strings"; sourceTree = "<group>"; };
 		D741097919D3003800781E10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SongViewCell.xib; sourceTree = "<group>"; };
@@ -118,6 +126,8 @@
 		D78E74DE19DEFA2F00FFA874 /* DownloadViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DownloadViewCell.xib; path = Views/DownloadViewCell.xib; sourceTree = "<group>"; };
 		D78E74DF19DEFA2F00FFA874 /* NotificationsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationsView.xib; path = Views/NotificationsView.xib; sourceTree = "<group>"; };
 		D78E74E019DEFA2F00FFA874 /* SongsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SongsView.xib; path = Views/SongsView.xib; sourceTree = "<group>"; };
+		D79F823A19E2E4D3003E20F8 /* VideoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewCell.swift; sourceTree = "<group>"; };
+		D79F823F19E2EB92003E20F8 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		D7A3F59619D4B40E00EFB907 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
 		D7F2529A19D4A487008F7135 /* AppProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppProtocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D79F824019E2EB92003E20F8 /* Crashlytics.framework in Frameworks */,
 				D7008A0E19DCCCDE00D6FE74 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +168,7 @@
 				D78E74D119DED1B100FFA874 /* Views Cell */,
 				D73C588519DEACB300AF3A7B /* PlayerView.xib */,
 				D78E74E019DEFA2F00FFA874 /* SongsView.xib */,
+				D72CA8DA19E2E47300FE5880 /* VideosView.xib */,
 				D78E74DF19DEFA2F00FFA874 /* NotificationsView.xib */,
 			);
 			name = Views;
@@ -168,6 +180,7 @@
 				D77213B519D03F78006FCD62 /* Coliseu */,
 				D77213CB19D03F79006FCD62 /* ColiseuTests */,
 				D77213B419D03F78006FCD62 /* Products */,
+				D79F823F19E2EB92003E20F8 /* Crashlytics.framework */,
 				D7008A0519DCCB2400D6FE74 /* Alamofire.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -247,6 +260,7 @@
 				D78E74D019DED16E00FFA874 /* Views Cell */,
 				D780CDD819DCD2E800925FBC /* PlayerViewController.swift */,
 				D780CDD719DCD2E800925FBC /* SongsViewController.swift */,
+				D72CA8D619E2E10500FE5880 /* VideosViewController.swift */,
 				D780CDD519DCD2E800925FBC /* NotificationsViewController.swift */,
 			);
 			path = "Views Controller";
@@ -265,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				D780CDD619DCD2E800925FBC /* SongViewCell.swift */,
+				D79F823A19E2E4D3003E20F8 /* VideoViewCell.swift */,
 				D780CDD419DCD2E800925FBC /* DownloadViewCell.swift */,
 			);
 			name = "Views Cell";
@@ -275,6 +290,7 @@
 			children = (
 				D741097A19D3003800781E10 /* SongViewCell.xib */,
 				D78E74DE19DEFA2F00FFA874 /* DownloadViewCell.xib */,
+				D72CA8D819E2E44900FE5880 /* VideoViewCell.xib */,
 			);
 			name = "Views Cell";
 			sourceTree = "<group>";
@@ -290,6 +306,7 @@
 				D77213B019D03F78006FCD62 /* Frameworks */,
 				D77213B119D03F78006FCD62 /* Resources */,
 				D77213E419D0795F006FCD62 /* Copy Frameworks */,
+				D79F823E19E2EB51003E20F8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -386,10 +403,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D741098519D301EB00781E10 /* Localizable.strings in Resources */,
+				D72CA8D919E2E44900FE5880 /* VideoViewCell.xib in Resources */,
 				D741097819D3003800781E10 /* SongViewCell.xib in Resources */,
 				D78E74E119DEFA2F00FFA874 /* DownloadViewCell.xib in Resources */,
 				D78E74E319DEFA2F00FFA874 /* SongsView.xib in Resources */,
 				D77213BE19D03F78006FCD62 /* Launch.storyboard in Resources */,
+				D72CA8DB19E2E47300FE5880 /* VideosView.xib in Resources */,
 				D77213C019D03F78006FCD62 /* Images.xcassets in Resources */,
 				D78E74E219DEFA2F00FFA874 /* NotificationsView.xib in Resources */,
 				D73C588619DEACB300AF3A7B /* PlayerView.xib in Resources */,
@@ -405,6 +424,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D79F823E19E2EB51003E20F8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run d8e4a998430741c25fc8939d85d1dee852ab2fb9 8308acaf8c93919e2529b47da88cb698cc27f681926b48b8b57f38e1e0c367dd";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D77213AF19D03F78006FCD62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -412,11 +447,13 @@
 			files = (
 				D77213B919D03F78006FCD62 /* AppDelegate.swift in Sources */,
 				D780CDE119DCD2E800925FBC /* PlayerViewController.swift in Sources */,
+				D72CA8D719E2E10500FE5880 /* VideosViewController.swift in Sources */,
 				D7F2529B19D4A487008F7135 /* AppProtocols.swift in Sources */,
 				D71511C919DD962C00A6B992 /* UIBaseViewController.swift in Sources */,
 				D75985C419D0F7A500F68BDF /* AppData.swift in Sources */,
 				D7A3F59719D4B40E00EFB907 /* AppController.swift in Sources */,
 				D72CA8D119E0830D00FE5880 /* YouTubeServer.swift in Sources */,
+				D79F823B19E2E4D3003E20F8 /* VideoViewCell.swift in Sources */,
 				D71511C719DD92F700A6B992 /* NotificationsController.swift in Sources */,
 				D780CDDF19DCD2E800925FBC /* SongViewCell.swift in Sources */,
 				D72CA8D519E083CC00FE5880 /* YouTubeVideo.swift in Sources */,
@@ -567,6 +604,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Coliseu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -579,6 +620,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Coliseu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

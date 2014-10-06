@@ -28,14 +28,6 @@ class PlayerViewController: UIBaseViewController
         buttonStop.addTarget(self, action: "didPressStop:", forControlEvents: UIControlEvents.TouchUpInside)
         buttonPrev.addTarget(self, action: "didPressPrevious:", forControlEvents: UIControlEvents.TouchUpInside)
         buttonNext.addTarget(self, action: "didPressNext:", forControlEvents: UIControlEvents.TouchUpInside)
-
-        // Teste
-        //let ytServer = YouTubeServer()
-        //ytServer.getVideos("", apiKey: "") { (items) -> () in
-        //    for item in items {
-        //        NSLog("Video: %@",item.title)
-        //    }
-        //}
     }
 
     override func viewDidAppear(animated: Bool)
@@ -98,26 +90,6 @@ class PlayerViewController: UIBaseViewController
     func didPressNext(sender: AnyObject?)
     {
         appCtrl.player.playNextSong();
-    }
-
-// MARK: Remote
-
-    override func remoteControlReceivedWithEvent(event: UIEvent)
-    {
-        if event.type == UIEventType.RemoteControl {
-            switch event.subtype {
-            case UIEventSubtype.RemoteControlNextTrack:
-                appCtrl.player.playNextSong();
-            case UIEventSubtype.RemoteControlPreviousTrack:
-                appCtrl.player.playPreviousSong();
-            case UIEventSubtype.RemoteControlPlay:
-                appCtrl.player.playSong();
-            case UIEventSubtype.RemoteControlPause:
-                appCtrl.player.pauseSong();
-            default:
-                appCtrl.player.playSong();
-            }
-        }
     }
 }
 

@@ -41,10 +41,13 @@ class NotificationsViewController: UIBaseViewController
         // Dynamic cells
         tableView.estimatedRowHeight = 65
         tableView.rowHeight = UITableViewAutomaticDimension
+
         // Configure
-        edgesForExtendedLayout = UIRectEdge.None
-        extendedLayoutIncludesOpaqueBars = false
-        automaticallyAdjustsScrollViewInsets = false
+        //edgesForExtendedLayout = UIRectEdge.None
+        //extendedLayoutIncludesOpaqueBars = false
+        //automaticallyAdjustsScrollViewInsets = false
+        //UIEdgeInsetsMake(top: CGFloat, left: CGFloat, bottom: CGFloat, right: CGFloat)
+        //tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f)
     }
 
     override func viewWillAppear(animated: Bool)

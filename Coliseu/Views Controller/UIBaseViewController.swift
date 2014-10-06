@@ -28,4 +28,25 @@ class UIBaseViewController: UIViewController
     {
 
     }
+
+// MARK: Remote
+
+    override func remoteControlReceivedWithEvent(event: UIEvent)
+    {
+        if event.type == UIEventType.RemoteControl {
+            switch event.subtype {
+            case UIEventSubtype.RemoteControlNextTrack:
+                appCtrl.player.playNextSong();
+            case UIEventSubtype.RemoteControlPreviousTrack:
+                appCtrl.player.playPreviousSong();
+            case UIEventSubtype.RemoteControlPlay:
+                appCtrl.player.playSong();
+            case UIEventSubtype.RemoteControlPause:
+                appCtrl.player.pauseSong();
+            default:
+                appCtrl.player.playSong();
+            }
+        }
+    }
+
 }
