@@ -11,6 +11,8 @@
 		D7008A0F19DCCCE200D6FE74 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D7008A0B19DCCB2500D6FE74 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D71511C719DD92F700A6B992 /* NotificationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71511C619DD92F700A6B992 /* NotificationsController.swift */; };
 		D71511C919DD962C00A6B992 /* UIBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71511C819DD962C00A6B992 /* UIBaseViewController.swift */; };
+		D72CA8D119E0830D00FE5880 /* YouTubeServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72CA8D019E0830D00FE5880 /* YouTubeServer.swift */; };
+		D72CA8D519E083CC00FE5880 /* YouTubeVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72CA8D419E083CC00FE5880 /* YouTubeVideo.swift */; };
 		D73C588619DEACB300AF3A7B /* PlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D73C588519DEACB300AF3A7B /* PlayerView.xib */; };
 		D741097819D3003800781E10 /* SongViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D741097A19D3003800781E10 /* SongViewCell.xib */; };
 		D741098519D301EB00781E10 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D741098719D301EB00781E10 /* Localizable.strings */; };
@@ -81,6 +83,8 @@
 		D7008A0519DCCB2400D6FE74 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Components/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		D71511C619DD92F700A6B992 /* NotificationsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsController.swift; sourceTree = "<group>"; };
 		D71511C819DD962C00A6B992 /* UIBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIBaseViewController.swift; sourceTree = "<group>"; };
+		D72CA8D019E0830D00FE5880 /* YouTubeServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeServer.swift; sourceTree = "<group>"; };
+		D72CA8D419E083CC00FE5880 /* YouTubeVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeVideo.swift; sourceTree = "<group>"; };
 		D73C588519DEACB300AF3A7B /* PlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlayerView.xib; path = Views/PlayerView.xib; sourceTree = "<group>"; };
 		D741097719D2FFA300781E10 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Launch.strings"; sourceTree = "<group>"; };
 		D741097919D3003800781E10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SongViewCell.xib; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				D780CDE619DD5FFF00925FBC /* RemoteServer.swift */,
+				D72CA8D019E0830D00FE5880 /* YouTubeServer.swift */,
+				D72CA8D419E083CC00FE5880 /* YouTubeVideo.swift */,
 				D780CDD119DCD2E800925FBC /* AudioFile.swift */,
 				D780CDD219DCD2E800925FBC /* AudioPlayer.swift */,
 				D78E74D819DEE45A00FFA874 /* NotificationServerProtocol.swift */,
@@ -410,8 +416,10 @@
 				D71511C919DD962C00A6B992 /* UIBaseViewController.swift in Sources */,
 				D75985C419D0F7A500F68BDF /* AppData.swift in Sources */,
 				D7A3F59719D4B40E00EFB907 /* AppController.swift in Sources */,
+				D72CA8D119E0830D00FE5880 /* YouTubeServer.swift in Sources */,
 				D71511C719DD92F700A6B992 /* NotificationsController.swift in Sources */,
 				D780CDDF19DCD2E800925FBC /* SongViewCell.swift in Sources */,
+				D72CA8D519E083CC00FE5880 /* YouTubeVideo.swift in Sources */,
 				D78E74DB19DEEA6E00FFA874 /* StorageController.swift in Sources */,
 				D78E74D719DEE1B400FFA874 /* NotificationDownload.swift in Sources */,
 				D780CDDB19DCD2E800925FBC /* AudioFile.swift in Sources */,

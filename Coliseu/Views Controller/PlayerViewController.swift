@@ -28,6 +28,14 @@ class PlayerViewController: UIBaseViewController
         buttonStop.addTarget(self, action: "didPressStop:", forControlEvents: UIControlEvents.TouchUpInside)
         buttonPrev.addTarget(self, action: "didPressPrevious:", forControlEvents: UIControlEvents.TouchUpInside)
         buttonNext.addTarget(self, action: "didPressNext:", forControlEvents: UIControlEvents.TouchUpInside)
+
+        // Teste
+        //let ytServer = YouTubeServer()
+        //ytServer.getVideos("", apiKey: "") { (items) -> () in
+        //    for item in items {
+        //        NSLog("Video: %@",item.title)
+        //    }
+        //}
     }
 
     override func viewDidAppear(animated: Bool)

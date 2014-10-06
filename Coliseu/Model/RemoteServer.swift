@@ -24,12 +24,14 @@ class RemoteServer: NotificationServerProtocol
             return
         }
 
-        let url = api + "submit?url=" + url + "&token=" + deviceToken
+        let req = api + "submit?url=" + url + "&token=" + deviceToken
 
         // Submit a new download (audio file)
-        Alamofire.request(.GET, url).responseString { (req: NSURLRequest, res: NSHTTPURLResponse?, str: String?, err: NSError?) -> Void in
+        Alamofire.request(.GET, req).responseString { (req: NSURLRequest, res: NSHTTPURLResponse?, str: String?, err: NSError?) -> Void in
             // Is alive
-            println(str!);
+            if let res = str {
+                println(res);
+            }
         }
     }
 
