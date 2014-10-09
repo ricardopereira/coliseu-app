@@ -1,3 +1,6 @@
 [submodule "Components/Alamofire"]
 	path = Components/Alamofire
 	url = https://github.com/Alamofire/Alamofire.git
+[submodule "Components/ColiseuPlayer"]
+	path = Components/ColiseuPlayer
+	url = https://github.com/ricardopereira/coliseu.ios.player.git

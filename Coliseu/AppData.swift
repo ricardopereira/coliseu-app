@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Ricardo Pereira. All rights reserved.
 //
 
+import ColiseuPlayer
+
 class AppData
 {
     var deviceToken: String?

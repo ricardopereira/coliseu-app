@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import ColiseuPlayer
 
 class AppController
 {
     let data = AppData()
-    let player = AudioPlayer()
+    let player = ColiseuPlayer()
 
     weak var notificationBarItem: UITabBarItem?
 

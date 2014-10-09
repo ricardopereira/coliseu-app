@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ColiseuPlayer
 
 class PlayerViewController: UIBaseViewController
 {

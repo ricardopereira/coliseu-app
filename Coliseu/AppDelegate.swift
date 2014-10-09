@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Custom push
         let settings = UIUserNotificationSettings(forTypes: .Alert | .Badge, categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
-
+        
         // Crashlytics
         Crashlytics.startWithAPIKey("d8e4a998430741c25fc8939d85d1dee852ab2fb9")
         return true
