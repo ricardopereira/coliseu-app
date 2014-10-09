@@ -34,6 +34,7 @@
 		D780CDE719DD5FFF00925FBC /* RemoteServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780CDE619DD5FFF00925FBC /* RemoteServer.swift */; };
 		D788F7B919E6A6A600C04099 /* ColiseuPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D788F7B619E6A66E00C04099 /* ColiseuPlayer.framework */; };
 		D788F7BA19E6A6CD00C04099 /* ColiseuPlayer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D788F7B619E6A66E00C04099 /* ColiseuPlayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D788F7C519E6F15300C04099 /* CWStatusBarNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D788F7C419E6F15300C04099 /* CWStatusBarNotification.swift */; };
 		D78E74D319DED3BB00FFA874 /* AppFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E74D219DED3BB00FFA874 /* AppFeatures.swift */; };
 		D78E74D519DEDDBC00FFA874 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E74D419DEDDBC00FFA874 /* Notification.swift */; };
 		D78E74D719DEE1B400FFA874 /* NotificationDownload.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E74D619DEE1B400FFA874 /* NotificationDownload.swift */; };
@@ -135,6 +136,7 @@
 		D780CDD819DCD2E800925FBC /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		D780CDE619DD5FFF00925FBC /* RemoteServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteServer.swift; sourceTree = "<group>"; };
 		D788F7B019E6A66E00C04099 /* ColiseuPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ColiseuPlayer.xcodeproj; path = Components/ColiseuPlayer/ColiseuPlayer.xcodeproj; sourceTree = "<group>"; };
+		D788F7C419E6F15300C04099 /* CWStatusBarNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CWStatusBarNotification.swift; path = Components/CWStatusBarNotification/CWStatusBarNotification/CWStatusBarNotification.swift; sourceTree = "<group>"; };
 		D78E74D219DED3BB00FFA874 /* AppFeatures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFeatures.swift; sourceTree = "<group>"; };
 		D78E74D419DEDDBC00FFA874 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		D78E74D619DEE1B400FFA874 /* NotificationDownload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationDownload.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				D77213B519D03F78006FCD62 /* Coliseu */,
 				D77213CB19D03F79006FCD62 /* ColiseuTests */,
 				D77213B419D03F78006FCD62 /* Products */,
+				D788F7BD19E6DD8600C04099 /* Components */,
 				D7098E3019E693250063500E /* Crashlytics.framework */,
 				D788F7B019E6A66E00C04099 /* ColiseuPlayer.xcodeproj */,
 				D7008A0519DCCB2400D6FE74 /* Alamofire.xcodeproj */,
@@ -299,6 +302,14 @@
 				D788F7B819E6A66E00C04099 /* ColiseuPlayerTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D788F7BD19E6DD8600C04099 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D788F7C419E6F15300C04099 /* CWStatusBarNotification.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 		D78E74D019DED16E00FFA874 /* Views Cell */ = {
@@ -505,6 +516,7 @@
 				D78E74D719DEE1B400FFA874 /* NotificationDownload.swift in Sources */,
 				D780CDE719DD5FFF00925FBC /* RemoteServer.swift in Sources */,
 				D780CDDE19DCD2E800925FBC /* NotificationsViewController.swift in Sources */,
+				D788F7C519E6F15300C04099 /* CWStatusBarNotification.swift in Sources */,
 				D78E74D319DED3BB00FFA874 /* AppFeatures.swift in Sources */,
 				D780CDE019DCD2E800925FBC /* SongsViewController.swift in Sources */,
 				D780CDDD19DCD2E800925FBC /* DownloadViewCell.swift in Sources */,

@@ -12,6 +12,8 @@ class UIBaseViewController: UIViewController
 {
     unowned let appCtrl: AppController
 
+    let statusNotification = CWStatusBarNotification()
+
     required init(nibName nibNameOrNil: String?, appCtrl: AppController)
     {
         self.appCtrl = appCtrl

@@ -79,6 +79,8 @@ extension VideosViewController: TableViewProtocol
             // Submit
             if let token = self.appCtrl.data.deviceToken {
                 self.appCtrl.data.remoteServer.submit("http://youtu.be/" + item.videoId, token)
+                // Notify to user
+                self.statusNotification.displayNotificationWithMessage("Hello, World!", duration: 1.0)
             }
         }
         alertController.addAction(OKAction)

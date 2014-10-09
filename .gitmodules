@@ -4,3 +4,6 @@
 [submodule "Components/ColiseuPlayer"]
 	path = Components/ColiseuPlayer
 	url = https://github.com/ricardopereira/coliseu.ios.player.git
+[submodule "Components/CWStatusBarNotification"]
+	path = Components/CWStatusBarNotification
+	url = https://github.com/ricardopereira/CWStatusBarNotification.git

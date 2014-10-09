@@ -73,6 +73,8 @@ class SongsViewController: UIBaseViewController
         // At this instance theres no Navigation bar!
     }
 
+// MARK: Actions
+
     func didPressSubmit(sender: AnyObject?)
     {
         let alertController = UIAlertController(title: "YouTube to MP3", message: "search with:", preferredStyle: .Alert)
