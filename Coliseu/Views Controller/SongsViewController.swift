@@ -149,4 +149,18 @@ extension SongsViewController: TableViewProtocol
         appCtrl.player.playSong(indexPath.row, songsList: files)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
+
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            if let filesList = files {
+                if let fileUrl = filesList[indexPath.row].path {
+                    // Remove file
+                    appCtrl.data.removeFile(fileUrl)
+                    files.removeAtIndex(indexPath.row)
+                    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                }
+            }
+        }
+    }
 }

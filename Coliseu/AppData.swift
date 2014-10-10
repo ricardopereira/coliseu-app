@@ -22,6 +22,11 @@ class AppData
 
     }
 
+    func removeFile(fileUrl: NSURL)
+    {
+        storage.removeFile(fileUrl)
+    }
+
     func getLocalFiles() -> [AudioFile]
     {
         return storage.getLocalFiles()

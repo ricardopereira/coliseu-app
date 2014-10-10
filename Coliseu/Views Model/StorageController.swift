@@ -28,13 +28,18 @@ class StorageController
         return files
     }
 
+    func removeFile(fileUrl: NSURL)
+    {
+        var error = NSErrorPointer()
+        NSFileManager.defaultManager().removeItemAtURL(fileUrl, error: error)
+    }
+
     func removeAllFiles()
     {
         // Show files URLs
         forEachFile { (fileUrl) -> Bool in
             // Remove file
-            var error = NSErrorPointer()
-            NSFileManager.defaultManager().removeItemAtURL(fileUrl, error: error)
+            self.removeFile(fileUrl)
             return true
         }
     }
