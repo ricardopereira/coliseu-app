@@ -68,7 +68,7 @@ class RemoteServer: NotificationServerProtocol
         var list: [AnyObject] = []
         // Read notifications from server
         // WARNING: server must be scalable!
-        Alamofire.request(.GET, api+"ready", parameters: ["token": deviceToken])
+        Alamofire.request(.GET, api+"notifications", parameters: ["token": deviceToken])
         .responseJSON { (_, _, JSON, _) in
             if let data = JSON as? NSArray
             {
@@ -83,6 +83,35 @@ class RemoteServer: NotificationServerProtocol
                 }
                 completionRequest(items: list)
             }
+        }
+    }
+
+    func getVideos(query: String, completionRequest: (items: [YouTubeVideo]) -> ())
+    {
+        var list: [YouTubeVideo] = []
+
+        // Remover espaços duplicados, caracteres especiais, verificar se tem '+', ...
+        let q = query.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+
+        let req = api + "search?q=" + q
+
+        Alamofire.request(.GET, req)
+            .responseJSON { (_, _, JSON, _) in
+                // Parsing JSON
+                if let items = JSON as? NSArray
+                {
+                    if items.count > 0
+                    {
+                        for item in items {
+                            // Test
+                            let id = item["videoId"] as String!
+                            let title = item["title"] as String!
+
+                            list.append(YouTubeVideo(id, title))
+                        }
+                    }
+                }
+                completionRequest(items: list)
         }
     }
 }

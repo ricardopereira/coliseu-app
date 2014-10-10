@@ -85,9 +85,8 @@ class SongsViewController: UIBaseViewController
 
             if feature_YouTube {
                 // Search with YouTube API v3
-                let ytServer = YouTubeServer()
                 // Get result
-                ytServer.getVideos(urlTextField.text, apiKey: "") { (items) -> () in
+                self.appCtrl.data.remoteServer.getVideos(urlTextField.text) { (items) -> () in
                     let videosView = VideosViewController(nibName: "VideosView", appCtrl: self.appCtrl, videos: items)
                     // Show results
                     if let navigation = self.navigationController {
