@@ -155,7 +155,7 @@ extension SongsViewController: TableViewProtocol
         if editingStyle == UITableViewCellEditingStyle.Delete {
             if let filesList = files {
                 if let fileUrl = filesList[indexPath.row].path {
-                    // Remove file
+                    // Remove file - Model!!
                     appCtrl.data.removeFile(fileUrl)
                     files.removeAtIndex(indexPath.row)
                     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
