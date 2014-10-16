@@ -69,25 +69,29 @@ class RemoteServer: NotificationServerProtocol
         // Read notifications from server
         // WARNING: server must be scalable!
         Alamofire.request(.GET, api+"notifications", parameters: ["token": deviceToken])
-        .responseJSON { (_, _, JSON, _) in
-            if let data = JSON as? NSArray
-            {
-                if data.count > 0
+            .responseJSON { (_, _, JSON, _) in
+                if let data = JSON as? NSArray
                 {
-                    for item in data {
-                        let title = item["title"] as String!
-                        let filename = item["filename"] as String!
+                    if data.count > 0
+                    {
+                        for item in data {
+                            let title = item["title"] as String!
+                            let filename = item["filename"] as String!
 
-                        list.append(NotificationDownload(title, filename))
+                            list.append(NotificationDownload(title, filename))
+                        }
                     }
+                    completionRequest(items: list)
                 }
-                completionRequest(items: list)
             }
-        }
     }
 
     func getVideos(query: String, completionRequest: (items: [YouTubeVideo]) -> ())
     {
+        if !feature_YouTube {
+            return
+        }
+
         var list: [YouTubeVideo] = []
 
         // Remover espaços duplicados, caracteres especiais, verificar se tem '+', ...
@@ -112,6 +116,6 @@ class RemoteServer: NotificationServerProtocol
                     }
                 }
                 completionRequest(items: list)
-        }
+            }
     }
 }

@@ -23,6 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.makeKeyAndVisible()
         window!.rootViewController = initViews()
 
+        // ?
+        UITabBar.appearance().tintColor = StyleKit.orange
+
+        UIView.appearance().tintColor = StyleKit.orange
+
+        UINavigationBar.appearance().tintColor = StyleKit.lightPurple
+        UINavigationBar.appearance().barTintColor = StyleKit.purple
+
+
         // Push Notifications
         UIApplication.sharedApplication().registerForRemoteNotifications()
 
@@ -87,7 +96,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSLog("Foreground notification")
             // Notification bar item
             if let barItem = appCtrl.notificationBarItem {
-                barItem.badgeValue = "*"
+                barItem.image = StyleKit.imageOfTabIconHasNotificationsDisabled
+                barItem.selectedImage = StyleKit.imageOfTabIconHasNotifications
             }
         case UIApplicationState.Background, UIApplicationState.Inactive:
             // Application is brought from background or launched after terminated
@@ -130,6 +140,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         tabBarController.setViewControllers(tabBarViews, animated: false)
+
+        // Icons
+        playerView.tabBarItem.image = StyleKit.imageOfTabIconPlayerDisabled
+        playerView.tabBarItem.selectedImage = StyleKit.imageOfTabIconPlayer
+
+        songsNavigationController.tabBarItem.image = StyleKit.imageOfTabIconSongsDisabled
+        songsNavigationController.tabBarItem.selectedImage = StyleKit.imageOfTabIconSongs
+
+        notificationsView.tabBarItem.image = StyleKit.imageOfTabIconNotificationsDisabled
+        notificationsView.tabBarItem.selectedImage = StyleKit.imageOfTabIconNotifications
+
         return tabBarController
     }
 }

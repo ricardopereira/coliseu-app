@@ -14,12 +14,13 @@ class DownloadViewCell: UITableViewCell
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var labelFilename: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
+    @IBOutlet weak var imageDone: UIImageView!
 
     override func awakeFromNib()
     {
         super.awakeFromNib()
         // For example: to associate delegates for fields
-
+        imageDone.hidden = true
     }
 
     func configure(title: String, _ filename: String, _ progress: Float) -> UITableViewCell
@@ -36,11 +37,13 @@ class DownloadViewCell: UITableViewCell
 
         progressBar.progress = progress
 
-        //if progress == 1 {
-        //    let okView = DoneView(frame: CGRectMake(2, 2, 50, 50))
-        //    okView.backgroundColor = UIColor.clearColor();
-        //    contentView.addSubview(okView)
-        //}
+        if progress == 1 {
+            imageDone.image = StyleKit.imageOfDownloadDone
+            imageDone.hidden = false
+        }
+        else {
+            imageDone.hidden = true
+        }
 
         return self
     }

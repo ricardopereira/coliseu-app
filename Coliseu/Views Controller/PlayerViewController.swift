@@ -29,6 +29,14 @@ class PlayerViewController: UIBaseViewController
         buttonStop.addTarget(self, action: "didPressStop:", forControlEvents: UIControlEvents.TouchUpInside)
         buttonPrev.addTarget(self, action: "didPressPrevious:", forControlEvents: UIControlEvents.TouchUpInside)
         buttonNext.addTarget(self, action: "didPressNext:", forControlEvents: UIControlEvents.TouchUpInside)
+
+        // ?
+        // https://developer.apple.com/library/ios/documentation/EventHandling/Conceptual/EventHandlingiPhoneOS/Remote-ControlEvents/Remote-ControlEvents.html#//apple_ref/doc/uid/TP40009541-CH7
+        // Set itself as the first responder
+        becomeFirstResponder()
+
+        // Resign as first responder
+        //resignFirstResponder();
     }
 
     override func viewDidAppear(animated: Bool)
@@ -40,6 +48,11 @@ class PlayerViewController: UIBaseViewController
     override func viewWillAppear(animated: Bool)
     {
         configureView()
+    }
+
+    override func canBecomeFirstResponder() -> Bool
+    {
+        return true;
     }
 
 // MARK: View

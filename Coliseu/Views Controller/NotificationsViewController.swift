@@ -68,7 +68,8 @@ class NotificationsViewController: UIBaseViewController
         super.viewDidAppear(animated)
         // Notification bar item
         if let barItem = tabBarItem {
-            barItem.badgeValue = nil
+            barItem.image = StyleKit.imageOfTabIconNotificationsDisabled
+            barItem.selectedImage = StyleKit.imageOfTabIconNotifications
         }
     }
 }

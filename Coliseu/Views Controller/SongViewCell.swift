@@ -12,7 +12,6 @@ class SongViewCell: UITableViewCell
 {
     // Fields
     @IBOutlet weak var labelTitle: UILabel!
-    @IBOutlet weak var labelFilename: UILabel!
 
     override func awakeFromNib()
     {
@@ -28,10 +27,6 @@ class SongViewCell: UITableViewCell
         labelTitle.numberOfLines = 0
         labelTitle.accessibilityLabel = NSLocalizedString("Music title", comment: "")
         labelTitle.accessibilityValue = title
-
-        labelFilename.text = filename
-        labelFilename.lineBreakMode = NSLineBreakMode.ByCharWrapping
-        labelFilename.numberOfLines = 0
         return self
     }
 
@@ -39,7 +34,7 @@ class SongViewCell: UITableViewCell
     {
         super.layoutSubviews()
         // ?
-        labelFilename.preferredMaxLayoutWidth = frame.width - 50
+        //labelFilename.preferredMaxLayoutWidth = frame.width - 50
     }
 
     override var bounds : CGRect {

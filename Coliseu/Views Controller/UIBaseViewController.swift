@@ -29,7 +29,7 @@ class UIBaseViewController: UIViewController
     func created()
     {
         // Notification
-        statusNotification.notificationLabelBackgroundColor = UIColor(red:1, green:0.4, blue:0, alpha:1)
+        statusNotification.notificationLabelBackgroundColor = StyleKit.darkPurple
     }
 
 // MARK: Remote

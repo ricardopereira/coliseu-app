@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6246" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5V2-ib-bfL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5V2-ib-bfL">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -16,6 +16,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="HNu-gO-f8k" kind="relationship" relationship="viewControllers" id="oLE-S2-pT5"/>
+                        <segue destination="gA3-tP-9Xn" kind="relationship" relationship="viewControllers" id="Zg8-jd-NDR"/>
+                        <segue destination="6ie-fZ-BGu" kind="relationship" relationship="viewControllers" id="4a0-ka-fUq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cfG-fe-nK2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -40,6 +42,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jsJ-wE-h34" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="858"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="ig5-uh-doa">
+            <objects>
+                <viewController title="Notifications" id="gA3-tP-9Xn" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zQb-k4-zRY"/>
+                        <viewControllerLayoutGuide type="bottom" id="nbn-9G-O9f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WLK-4o-TrH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Songs" id="pQ0-eJ-flN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yms-ZS-B2X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1402" y="858"/>
+        </scene>
+        <!--Songs-->
+        <scene sceneID="MWe-ai-KZF">
+            <objects>
+                <viewController title="Songs" id="6ie-fZ-BGu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BXA-Bv-eM0"/>
+                        <viewControllerLayoutGuide type="bottom" id="pzN-Qa-gJc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="oT1-Rw-oAK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Notifications" id="Efd-se-tiz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3MW-Pg-qZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="858"/>
         </scene>
     </scenes>
 </document>

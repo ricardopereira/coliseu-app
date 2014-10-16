@@ -30,7 +30,7 @@ class SongsViewController: UIBaseViewController
         tableView.dataSource = self
 
         // Configure
-        tableView.estimatedRowHeight = 100
+        tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableViewAutomaticDimension
 
         // Teste
@@ -71,6 +71,11 @@ class SongsViewController: UIBaseViewController
     {
         super.viewDidDisappear(animated)
         // At this instance theres no Navigation bar!
+    }
+
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
+        return UIStatusBarStyle.LightContent
     }
 
 // MARK: Actions
@@ -145,7 +150,10 @@ extension SongsViewController: TableViewProtocol
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        appCtrl.player.playSong(indexPath.row, songsList: files)
+        if let filesList = files {
+            appCtrl.player.playSong(indexPath.row, songsList: filesList)
+        }
+
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
