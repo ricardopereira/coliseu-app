@@ -37,7 +37,8 @@ class VideosViewController: UIBaseViewController
         super.viewDidLoad();
         // Register cell
         let cellNib = UINib(nibName: "VideoViewCell", bundle: nil)
-        tableView.registerNib(cellNib!, forCellReuseIdentifier: cellVideoIdentifier)
+
+        tableView.registerNib(cellNib, forCellReuseIdentifier: cellVideoIdentifier)
 
         // Set delegate and datasource
         tableView.delegate = self

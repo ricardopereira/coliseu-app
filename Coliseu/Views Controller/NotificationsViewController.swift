@@ -34,7 +34,7 @@ class NotificationsViewController: UIBaseViewController
         super.viewDidLoad()
         // Register cell
         let cellNib = UINib(nibName: "DownloadViewCell", bundle: nil)
-        tableView.registerNib(cellNib!, forCellReuseIdentifier: cellDownloadIdentifier)
+        tableView.registerNib(cellNib, forCellReuseIdentifier: cellDownloadIdentifier)
         // Set delegate and datasource
         tableView.delegate = self
         tableView.dataSource = self

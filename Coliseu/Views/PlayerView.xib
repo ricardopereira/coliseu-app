@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6246" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6221" systemVersion="14C94b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerViewController" customModule="Coliseu" customModuleProvider="target">
@@ -18,6 +18,9 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="15Q-p7-4e4">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6J-8N-Lux">
                     <rect key="frame" x="250" y="250" width="100" height="100"/>
                     <constraints>
@@ -63,8 +66,12 @@
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="A6J-8N-Lux" secondAttribute="centerX" id="22u-v7-bF7"/>
                 <constraint firstAttribute="centerY" secondItem="A6J-8N-Lux" secondAttribute="centerY" id="6A9-CQ-sAB"/>
+                <constraint firstItem="15Q-p7-4e4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6h4-xN-xCI"/>
+                <constraint firstItem="15Q-p7-4e4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CZo-5f-uxg"/>
                 <constraint firstItem="PjX-bH-fq8" firstAttribute="top" secondItem="A6J-8N-Lux" secondAttribute="bottom" constant="28" id="LDI-0x-MzI"/>
+                <constraint firstAttribute="trailing" secondItem="15Q-p7-4e4" secondAttribute="trailing" id="LRS-uL-UJK"/>
                 <constraint firstItem="A6J-8N-Lux" firstAttribute="leading" secondItem="Hgv-Dc-GUS" secondAttribute="trailing" constant="28" id="Z6z-X9-SuE"/>
+                <constraint firstAttribute="bottom" secondItem="15Q-p7-4e4" secondAttribute="bottom" id="dvw-YL-Gf6"/>
                 <constraint firstItem="4pm-U0-53P" firstAttribute="leading" secondItem="A6J-8N-Lux" secondAttribute="trailing" constant="28" id="hZ8-SU-TRR"/>
                 <constraint firstAttribute="centerX" secondItem="PjX-bH-fq8" secondAttribute="centerX" constant="-0.5" id="i2H-Us-vvC"/>
                 <constraint firstAttribute="centerY" secondItem="4pm-U0-53P" secondAttribute="centerY" constant="-0.5" id="mVr-VM-tUd"/>

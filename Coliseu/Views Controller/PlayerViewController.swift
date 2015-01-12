@@ -55,6 +55,11 @@ class PlayerViewController: UIBaseViewController
         return true;
     }
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
+        return .Default
+    }
+
 // MARK: View
 
     func configurePlayer()

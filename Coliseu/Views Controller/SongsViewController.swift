@@ -23,7 +23,8 @@ class SongsViewController: UIBaseViewController
 
         // Register cell
         let cellNib = UINib(nibName: "SongViewCell", bundle: nil)
-        tableView.registerNib(cellNib!, forCellReuseIdentifier: cellSongIdentifier)
+
+        tableView.registerNib(cellNib, forCellReuseIdentifier: cellSongIdentifier)
 
         // Set delegate and datasource
         tableView.delegate = self
