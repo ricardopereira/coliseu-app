@@ -92,7 +92,7 @@ extension NotificationsViewController: TableViewProtocol
         if notify is NotificationDownload {
             // Download
             if let download = notify as? NotificationDownload {
-                if let cell = tableView.dequeueReusableCellWithIdentifier(cellDownloadIdentifier) as DownloadViewCell? {
+                if let cell = tableView.dequeueReusableCellWithIdentifier(cellDownloadIdentifier) as! DownloadViewCell? {
                     cellRow = cell.configure(download.message, download.fileName, download.progress)
                 }
             }
@@ -116,7 +116,7 @@ extension NotificationsViewController: TableViewProtocol
                     return
                 }
 
-                let cell = tableView.cellForRowAtIndexPath(indexPath) as DownloadViewCell?
+                let cell = tableView.cellForRowAtIndexPath(indexPath) as! DownloadViewCell?
                 if (cell == nil) {
                     return
                 }
@@ -125,7 +125,7 @@ extension NotificationsViewController: TableViewProtocol
                 appCtrl.data.remoteServer.download(download.fileName, appCtrl.data.deviceToken!,
                     progressEvent: { (totalBytesRead, totalBytesExpectedToRead) -> () in
                         // Update cell
-                        let download = self.controller.items[indexPath.row] as NotificationDownload //?
+                        let download = self.controller.items[indexPath.row] as! NotificationDownload //?
                         // Workaround: maybe a bug from Swift!
                         download.progress = Float(totalBytesRead) / Float(totalBytesExpectedToRead)
 
@@ -136,7 +136,7 @@ extension NotificationsViewController: TableViewProtocol
                     },
                     completionRequest: { (error) -> () in
                         // Update cell
-                        let download = self.controller.items[indexPath.row] as NotificationDownload //?
+                        let download = self.controller.items[indexPath.row] as! NotificationDownload //?
                         download.progress = 1
 
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in

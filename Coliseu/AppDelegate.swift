@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let title: AnyObject = userInfo["title"] {
             if let fileName: AnyObject = userInfo["filename"] {
                 // New notification
-                handleNotification(application.applicationState, title as String, fileName as String)
+                handleNotification(application.applicationState, title as! String, fileName as! String)
                 completionHandler(UIBackgroundFetchResult.NewData)
                 return
             }

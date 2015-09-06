@@ -58,7 +58,7 @@ class StorageController
 
             // Save on mem the list of files
             for file in filesFromFolder! {
-                result = fileHandler(fileUrl: file as NSURL)
+                result = fileHandler(fileUrl: file as! NSURL)
             }
         }
         return result

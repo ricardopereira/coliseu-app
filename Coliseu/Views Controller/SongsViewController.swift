@@ -87,7 +87,7 @@ class SongsViewController: UIBaseViewController
 
         let searchAction = UIAlertAction(title: "Search", style: .Default) { [unowned self] (_) in
             // Did press
-            let urlTextField = alertController.textFields![0] as UITextField
+            let urlTextField = alertController.textFields![0] as! UITextField
 
             if feature_YouTube {
                 // Search with YouTube API v3
@@ -141,7 +141,7 @@ extension SongsViewController: TableViewProtocol
         var cellRow = UITableViewCell()
 
         if let filesList = files {
-            if let cell = tableView.dequeueReusableCellWithIdentifier(cellSongIdentifier) as SongViewCell? {
+            if let cell = tableView.dequeueReusableCellWithIdentifier(cellSongIdentifier) as! SongViewCell? {
                 let audioFile = filesList[indexPath.row]
                 cellRow = cell.configure(audioFile.title, audioFile.fileName)
             }

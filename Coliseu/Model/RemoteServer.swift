@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Ricardo Pereira. All rights reserved.
 //
 
-import Alamofire
+import Foundation
 
 let api = "http://178.62.75.78:9000/api/"
 let dir = "YouTube";
@@ -27,12 +27,14 @@ class RemoteServer: NotificationServerProtocol
         let req = api + "submit?url=" + url + "&token=" + deviceToken
 
         // Submit a new download (audio file)
+        /*
         Alamofire.request(.GET, req).responseString { (req: NSURLRequest, res: NSHTTPURLResponse?, str: String?, err: NSError?) -> Void in
             // Is alive
             if let res = str {
                 println(res);
             }
         }
+        */
     }
 
     func download(fileName: String, _ deviceToken: String, progressEvent: (totalBytesRead: Int64, totalBytesExpectedToRead: Int64) -> (), completionRequest: (error: NSError?) -> ())
@@ -44,6 +46,7 @@ class RemoteServer: NotificationServerProtocol
         let url = api + "load?file=" + fileName + "&token=" + deviceToken
 
         // Download a audio file
+        /*
         Alamofire.download(.GET, url, { (temporaryURL, response) in //Destination
             if let directoryURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory,inDomains: .UserDomainMask)[0] as? NSURL
             {
@@ -61,6 +64,7 @@ class RemoteServer: NotificationServerProtocol
             println(response)
             completionRequest(error: error)
         }
+        */
     }
 
     func getNotifications(deviceToken: String, completionRequest: (items: [AnyObject]) -> ()) //AnyObject -> base Notification
@@ -68,6 +72,8 @@ class RemoteServer: NotificationServerProtocol
         var list: [AnyObject] = []
         // Read notifications from server
         // WARNING: server must be scalable!
+        
+        /*
         Alamofire.request(.GET, api+"notifications", parameters: ["token": deviceToken])
             .responseJSON { (_, _, JSON, _) in
                 if let data = JSON as? NSArray
@@ -84,6 +90,7 @@ class RemoteServer: NotificationServerProtocol
                     completionRequest(items: list)
                 }
             }
+        */
     }
 
     func getVideos(query: String, completionRequest: (items: [YouTubeVideo]) -> ())
@@ -99,6 +106,7 @@ class RemoteServer: NotificationServerProtocol
 
         let req = api + "search?q=" + q
 
+        /*
         Alamofire.request(.GET, req)
             .responseJSON { (_, _, JSON, _) in
                 // Parsing JSON
@@ -117,5 +125,6 @@ class RemoteServer: NotificationServerProtocol
                 }
                 completionRequest(items: list)
             }
+        */
     }
 }

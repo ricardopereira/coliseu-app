@@ -547,7 +547,7 @@ public class StyleKit : NSObject {
         set {
             Cache.tabIconPlayerTargets = newValue
             for target: AnyObject in newValue {
-                (target as StyleKitSettableImage).image = StyleKit.imageOfTabIconPlayer
+                (target as! StyleKitSettableImage).image = StyleKit.imageOfTabIconPlayer
             }
         }
     }
@@ -557,7 +557,7 @@ public class StyleKit : NSObject {
         set {
             Cache.tabIconPlayerDisabledTargets = newValue
             for target: AnyObject in newValue {
-                (target as StyleKitSettableImage).image = StyleKit.imageOfTabIconPlayerDisabled
+                (target as! StyleKitSettableImage).image = StyleKit.imageOfTabIconPlayerDisabled
             }
         }
     }
@@ -567,7 +567,7 @@ public class StyleKit : NSObject {
         set {
             Cache.tabIconSongsTargets = newValue
             for target: AnyObject in newValue {
-                (target as StyleKitSettableImage).image = StyleKit.imageOfTabIconSongs
+                (target as! StyleKitSettableImage).image = StyleKit.imageOfTabIconSongs
             }
         }
     }
@@ -577,7 +577,7 @@ public class StyleKit : NSObject {
         set {
             Cache.tabIconSongsDisabledTargets = newValue
             for target: AnyObject in newValue {
-                (target as StyleKitSettableImage).image = StyleKit.imageOfTabIconSongsDisabled
+                (target as! StyleKitSettableImage).image = StyleKit.imageOfTabIconSongsDisabled
             }
         }
     }
@@ -587,7 +587,7 @@ public class StyleKit : NSObject {
         set {
             Cache.tabIconHasNotificationsTargets = newValue
             for target: AnyObject in newValue {
-                (target as StyleKitSettableImage).image = StyleKit.imageOfTabIconHasNotifications
+                (target as! StyleKitSettableImage).image = StyleKit.imageOfTabIconHasNotifications
             }
         }
     }
@@ -597,7 +597,7 @@ public class StyleKit : NSObject {
         set {
             Cache.tabIconHasNotificationsDisabledTargets = newValue
             for target: AnyObject in newValue {
-                (target as StyleKitSettableImage).image = StyleKit.imageOfTabIconHasNotificationsDisabled
+                (target as! StyleKitSettableImage).image = StyleKit.imageOfTabIconHasNotificationsDisabled
             }
         }
     }
@@ -607,7 +607,7 @@ public class StyleKit : NSObject {
         set {
             Cache.tabIconNotificationsTargets = newValue
             for target: AnyObject in newValue {
-                (target as StyleKitSettableImage).image = StyleKit.imageOfTabIconNotifications
+                (target as! StyleKitSettableImage).image = StyleKit.imageOfTabIconNotifications
             }
         }
     }
@@ -617,7 +617,7 @@ public class StyleKit : NSObject {
         set {
             Cache.tabIconNotificationsDisabledTargets = newValue
             for target: AnyObject in newValue {
-                (target as StyleKitSettableImage).image = StyleKit.imageOfTabIconNotificationsDisabled
+                (target as! StyleKitSettableImage).image = StyleKit.imageOfTabIconNotificationsDisabled
             }
         }
     }
@@ -627,7 +627,7 @@ public class StyleKit : NSObject {
         set {
             Cache.downloadDoneTargets = newValue
             for target: AnyObject in newValue {
-                (target as StyleKitSettableImage).image = StyleKit.imageOfDownloadDone
+                (target as! StyleKitSettableImage).image = StyleKit.imageOfDownloadDone
             }
         }
     }
