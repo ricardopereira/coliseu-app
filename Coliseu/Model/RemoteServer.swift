@@ -8,7 +8,7 @@
 
 import Alamofire
 
-let api = "http://178.62.16.229:9000/api/"
+let api = "http://178.62.75.78:9000/api/"
 let dir = "YouTube";
 
 class RemoteServer: NotificationServerProtocol

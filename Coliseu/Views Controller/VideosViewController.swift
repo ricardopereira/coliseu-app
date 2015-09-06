@@ -55,7 +55,7 @@ extension VideosViewController: TableViewProtocol
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cellRow = UITableViewCell()
+        var cellRow = UITableViewCell ()
 
         if let cell = tableView.dequeueReusableCellWithIdentifier(cellVideoIdentifier) as VideoViewCell? {
             let item = videos[indexPath.row]
